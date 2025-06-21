@@ -93,17 +93,17 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                   className="absolute inset-0"
                 >
                   <Image
-                    src={project.images[currentImageIndex]?.url || "/placeholder.svg"}
-                    alt={project.images[currentImageIndex]?.alt || project.title}
+                    src={project.images?.[currentImageIndex]?.url || "/placeholder.svg"}
+                    alt={project.images?.[currentImageIndex]?.alt || project.title}
                     fill
-                    className="object-containt"
+                    className="object-contain" // Koreksi kesalahan ketik: object-contain
                     priority
                   />
                 </motion.div>
               </AnimatePresence>
         
               {/* Navigation Arrows */}
-              {project.images.length > 1 && (
+              {project.images?.length > 1 && (
                 <>
                   <Button
                     variant="secondary"
@@ -125,7 +125,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
               )}
       
               {/* Image Counter */}
-              {project.images.length > 1 && (
+              {project.images?.length > 1 && (
                 <div className="absolute bottom-4 right-4 bg-background/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm">
                   {currentImageIndex + 1} / {project.images.length}
                 </div>
@@ -133,22 +133,22 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
             </div>
             
             {/* Image Caption */}
-            {project.images[currentImageIndex]?.caption && (
+            {project.images?.[currentImageIndex]?.caption && (
               <div className="p-4 bg-muted/50">
-                <p className="text-sm text-muted-foreground text-center">{project.images[currentImageIndex].caption}</p>
+                <p className="text-sm text-muted-foreground text-center">{project.images?.[currentImageIndex].caption}</p>
               </div>
             )}
           </div>
         </Card>
           
         {/* Image Thumbnails */}
-        {project.images.length > 1 && (
+        {project.images?.length > 1 && (
           <div className="flex gap-2 mt-4 overflow-x-auto pb-2">
             {project.images.map((image, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentImageIndex(index)}
-                className={`relative flex-shrink-0 w-28 aspect-video rounded-lg overflow-hidden border-2 transition-all duration-300 ${ // Ubah w-20 h-12 menjadi w-28 aspect-video
+                className={`relative flex-shrink-0 w-28 aspect-video rounded-lg overflow-hidden border-2 transition-all duration-300 ${
                   index === currentImageIndex ? "border-primary shadow-lg" : "border-border hover:border-primary/50"
                 }`}
               >

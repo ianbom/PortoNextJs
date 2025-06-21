@@ -64,7 +64,6 @@ export default function ProjectsPage() {
                       <Image
                         src={project.thumbnail || "/placeholder.svg"}
                         alt={project.title}
-                        // Hapus width dan height dari Image component karena akan diatur oleh CSS
                         width={400}
                         height={200}
                         className="absolute inset-0 w-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -101,13 +100,14 @@ export default function ProjectsPage() {
               <motion.div key={project.slug} variants={itemVariants}>
                 <Link href={`/projects/${project.slug}`}>
                   <Card className="h-full hover:shadow-lg transition-all duration-300 group">
-                    <div className="relative overflow-hidden rounded-t-lg">
+                    {/* Perubahan di sini */}
+                    <div className="relative overflow-hidden rounded-t-lg pt-[56.25%]">
                       <Image
-                        src={project.image || "/placeholder.svg"}
+                        src={project.thumbnail}
                         alt={project.title}
                         width={400}
-                        height={200}
-                        className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
+                        height={225} // Sesuaikan tinggi jika perlu, atau hapus jika ingin dikontrol penuh oleh CSS
+                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
                     <CardHeader className="pb-3">
@@ -123,7 +123,6 @@ export default function ProjectsPage() {
                         ))}
                       </div>
                     </CardContent>
-                   
                   </Card>
                 </Link>
               </motion.div>
