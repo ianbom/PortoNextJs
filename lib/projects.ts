@@ -66,7 +66,7 @@ export const projects: Project[] = [
       },
     ],
     githubUrl: "https://github.com/ianbom/RentEase.git",
-    demoUrl: "https://rentease.ianianale.shop/",
+    demoUrl: "https://rentease.ianianale.shop/login",
     featured: true,
     thumbnail: "/rentease/FireShot Capture 051 - Home - RentEase - Penyewaan Barang dan Jasa - [127.0.0.1].png"
   },
@@ -183,8 +183,8 @@ export const projects: Project[] = [
         caption: "Mobile-optimized interface for weather on the go",
       },
     ],
-    githubUrl: "https://github.com/alexrivera/weather-dashboard",
-    demoUrl: "https://weather-demo.alexrivera.dev",
+    githubUrl: "https://github.com",
+    demoUrl: "https://github.com",
     featured: false,
     thumbnail: "/mijel/FireShot Capture 079 - Mijel - Penukaran Minyak Jelantah - [103.56.148.69].png"
   },
@@ -234,8 +234,8 @@ export const projects: Project[] = [
         caption: "Log activity for users activity",
       },
     ],
-    githubUrl: "https://github.com/alexrivera/blog-platform",
-    demoUrl: "https://blog-demo.alexrivera.dev",
+    githubUrl: "https://github.com",
+    demoUrl: "https://github.com",
     featured: false,
     thumbnail: "/kpwebcare/FireShot Capture 068 - Login Client Portal - [127.0.0.1].png"
   },
@@ -280,8 +280,8 @@ features: [
         caption: "Patiens detail page",
       },
     ],
-    githubUrl: "https://github.com/alexrivera/portfolio",
-    demoUrl: "https://alexrivera.dev",
+     githubUrl: "https://github.com",
+    demoUrl: "https://github.com",
     featured: false,
     thumbnail: "/eklinik/36.jpg"
   },
@@ -339,8 +339,8 @@ features: [
         caption: "Dashboard transaction for admin",
       },
     ],
-    githubUrl: "https://github.com/alexrivera/chat-app",
-    demoUrl: "https://chat-demo.alexrivera.dev",
+     githubUrl: "https://github.com",
+    demoUrl: "https://github.com",
     featured: false,
     thumbnail: "/renttrip/FireShot Capture 069 -  - [rental-nextjs.vercel.app].png"
   },
@@ -396,8 +396,8 @@ features: [
         caption: "Dashboard subscription for admin",
       },
     ],
-    githubUrl: "https://github.com/alexrivera/chat-app",
-    demoUrl: "https://chat-demo.alexrivera.dev",
+     githubUrl: "https://github.com",
+    demoUrl: "https://github.com",
     featured: false,
     thumbnail: "/course/FireShot Capture 076 - Login - [course.ianianale.shop].png"
   },

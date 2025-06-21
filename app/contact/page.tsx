@@ -207,7 +207,7 @@ export default function ContactPage() {
                     className="border-2 hover:bg-primary hover:text-primary-foreground hover:border-primary hover:scale-110 transition-all duration-300"
                     asChild
                   >
-                    <Link href="https://linkedin.com/in/alexrivera" target="_blank">
+                    <Link href="https://www.linkedin.com/in/ian-ale-hansyah-204ab9286/" target="_blank">
                       <Linkedin className="h-5 w-5" />
                     </Link>
                   </Button>
@@ -217,7 +217,7 @@ export default function ContactPage() {
                     className="border-2 hover:bg-primary hover:text-primary-foreground hover:border-primary hover:scale-110 transition-all duration-300"
                     asChild
                   >
-                    <Link href="https://github.com/johndoe" target="_blank">
+                    <Link href="https://github.com" target="_blank">
                       <Github className="h-5 w-5" />
                     </Link>
                   </Button>
@@ -227,7 +227,7 @@ export default function ContactPage() {
                     className="border-2 hover:bg-primary hover:text-primary-foreground hover:border-primary hover:scale-110 transition-all duration-300"
                     asChild
                   >
-                    <Link href="https://instagram.com/johndoe" target="_blank">
+                    <Link href="https://www.instagram.com/ianale._/" target="_blank">
                       <Instagram className="h-5 w-5" />
                     </Link>
                   </Button>

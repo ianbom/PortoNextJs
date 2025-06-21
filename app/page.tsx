@@ -179,12 +179,15 @@ export default function HomePage() {
               pursuing my degree while building real-world projects.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
+             <Button
                 size="lg"
                 className="text-lg px-8 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl"
+                asChild // Penting: Agar Button berperilaku sebagai Link
               >
-                <Download className="mr-2 h-5 w-5" />
-                Download CV
+                <Link href="/CV.pdf" target="_blank" rel="noopener noreferrer">
+                  <Download className="mr-2 h-5 w-5" />
+                  View CV
+                </Link>
               </Button>
               <Button
                 size="lg"
@@ -370,7 +373,7 @@ export default function HomePage() {
                           className="w-full border-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                           asChild
                         >
-                          <Link href={cert.verificationUrl} target="_blank">
+                          <Link href="/SISFOR_IAN ALE.pdf" target="_blank">
                             <LinkIcon className="mr-2 h-4 w-4" />
                             Verify Certificate
                           </Link>
