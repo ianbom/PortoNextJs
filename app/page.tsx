@@ -200,6 +200,17 @@ export default function HomePage() {
                   View Projects
                 </Link>
               </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-lg px-8 border-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                asChild
+              >
+                <Link href="https://shorturl.at/t4V3r" target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="mr-2 h-5 w-5" />
+                  View Portofolio Ppt
+                </Link>
+              </Button>
             </div>
           </motion.div>
         </div>
