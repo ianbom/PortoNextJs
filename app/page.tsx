@@ -93,9 +93,18 @@ const certificates = [
     title: "Certificate MSIB Batch 7",
     issuer: "Kampus Merdeka",
     date: "Dec 2024",
-    credentialId: "tt3782o6",
+    credentialId: "11378206",
     description: "Junior Backend Application Developer",
-    verificationUrl: "https://google.com",
+    verificationUrl: "/SISFOR_IAN ALE.pdf",
+    logo: "/placeholder.svg?height=60&width=60",
+  },
+  {
+    title: "1st Place Web Development",
+    issuer: "National Competition Silogi Expo ",
+    date: "August 2025",
+    credentialId: "-",
+    description: "Tim Kebut Semalam Creating Platform WargaUsaha",
+    verificationUrl: "/silogy.jpg",
     logo: "/placeholder.svg?height=60&width=60",
   },
 ];
@@ -184,7 +193,7 @@ export default function HomePage() {
                 className="text-lg px-8 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl"
                 asChild // Penting: Agar Button berperilaku sebagai Link
               >
-                <Link href="/CV.pdf" target="_blank" rel="noopener noreferrer">
+                <Link href="/CV_Ian_Fullstack.pdf" target="_blank" rel="noopener noreferrer">
                   <Download className="mr-2 h-5 w-5" />
                   View CV
                 </Link>
@@ -236,9 +245,11 @@ export default function HomePage() {
               </motion.div>
               <motion.div variants={fadeInUp} className="space-y-6">
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Hello! I'm Ian, I am a sixth-semester Computer Engineering student at PENS currently in the final phase of my academic journey. With over 15 application and website projects completed,
-                  I specialize as a Fullstack Developer skilled in PHP, Dart, and JavaScript, using frameworks like Laravel, Flutter, ExpressJs, and React.
+                  Hello! I'm Ian, a graduate of the D3 Informatics Engineering program at PENS, 
+                  currently continuing my studies in the D4 Informatics Engineering program at the same institution. 
+                  With over 10 application and website projects completed, I specialize as a Fullstack Developer skilled in PHP, Dart, and JavaScript, using frameworks like Laravel, Flutter, Express.js, Next.Js, and React.
                 </p>
+
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   I have professional experience as a Backend Developer Intern at Webcare Indonesia and through the MSIB Batch 7 program at LLDIKTI Region 7.
                   I’m passionate about building efficient and scalable digital solutions.
@@ -249,17 +260,17 @@ export default function HomePage() {
                 </p>
                 <div className="flex gap-4 pt-4">
                   <Button variant="outline" size="icon" asChild>
-                    <Link href="https://linkedin.com" target="_blank">
+                    <Link href="https://linkedin.com/in/ian-ale-h" target="_blank">
                       <Linkedin className="h-5 w-5" />
                     </Link>
                   </Button>
                   <Button variant="outline" size="icon" asChild>
-                    <Link href="https://github.com" target="_blank">
+                    <Link href="https://github.com/ianbom" target="_blank">
                       <Github className="h-5 w-5" />
                     </Link>
                   </Button>
                   <Button variant="outline" size="icon" asChild>
-                    <Link href="https://instagram.com" target="_blank">
+                    <Link href="https://www.instagram.com/ianale._/" target="_blank">
                       <Instagram className="h-5 w-5" />
                     </Link>
                   </Button>
@@ -384,9 +395,9 @@ export default function HomePage() {
                           className="w-full border-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                           asChild
                         >
-                          <Link href="/SISFOR_IAN ALE.pdf" target="_blank">
+                          <Link href={cert.verificationUrl} target="_blank">
                             <LinkIcon className="mr-2 h-4 w-4" />
-                            Verify Certificate
+                            View Cerificate
                           </Link>
                         </Button>
                       </div>
