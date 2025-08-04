@@ -19,6 +19,72 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+ {
+  slug: "sobat-bumi",
+  title: "SobatBumi",
+  description: "A collaborative platform for reporting and taking real action on environmental issues in Indonesia.",
+  fullDescription:
+    "SobatBumi connects citizens, communities, and volunteers to report, verify, and follow up on environmental issues such as waste and pollution. The platform provides a reporting system, verification process, environmental action missions, and an admin dashboard for monitoring and statistics.",
+  features: [
+    "User registration and secure authentication",
+    "Environmental issue reporting with location and photo upload",
+    "Admin verification before reports are published",
+    "Convert reports into environmental action missions",
+    "Admin dashboard for monitoring reports, missions, and statistics",
+    "Gamification system: points, badges, and leaderboard",
+    "Redeem points for merchandise",
+    "Donation system to support environmental missions (Midtrans integration)",
+    "Environmental education quizzes",
+    "Multi-role support: admin, volunteer, community, citizen"
+  ],
+  technologies: ["Laravel", "React", "TypeScript", "Inertia.js", "MySQL", "Midtrans", "Tailwind CSS", "Leaflet Maps"],
+ images: [
+  {
+    url: "/sobatbumi/FireShot Capture 167 - SobatBumi - [sobatbumi.ianianale.shop].png",
+    alt: "Report List",
+    caption: "Displays a comprehensive list of environmental reports submitted by users, allowing admins to monitor and manage incoming issues efficiently.",
+  },
+  {
+    url: "/sobatbumi/FireShot Capture 168 - Sobatbumi - [sobatbumi.ianianale.shop].png",
+    alt: "Report Detail",
+    caption: "Shows detailed information about a specific environmental report, including location, description, and supporting images for verification.",
+  },
+  {
+    url: "/sobatbumi/FireShot Capture 169 - SobatBumi - [sobatbumi.ianianale.shop].png",
+    alt: "Mission Detail",
+    caption: "Provides an in-depth view of an environmental action mission, including objectives, participants, and progress updates.",
+  },
+  {
+    url: "/sobatbumi/FireShot Capture 170 - SobatBumi - [sobatbumi.ianianale.shop].png",
+    alt: "Maps",
+    caption: "Interactive map feature that visualizes the locations of reported environmental issues and ongoing missions across regions.",
+  },
+  {
+    url: "/sobatbumi/FireShot Capture 171 - SobatBumi - [sobatbumi.ianianale.shop].png",
+    alt: "Education Content",
+    caption: "Section dedicated to educational content, providing users with articles and resources about environmental awareness and best practices.",
+  },
+  {
+    url: "/sobatbumi/FireShot Capture 172 - SobatBumi - [sobatbumi.ianianale.shop].png",
+    alt: "Education Quiz",
+    caption: "Interactive quizzes designed to test and improve users' knowledge about environmental issues and solutions.",
+  },
+  {
+    url: "/sobatbumi/FireShot Capture 173 - SobatBumi - [sobatbumi.ianianale.shop].png",
+    alt: "Merchandise",
+    caption: "Merchandise page where users can redeem points earned from participation for exclusive eco-friendly products.",
+  },
+  {
+    url: "/sobatbumi/FireShot Capture 174 - SobatBumi - [sobatbumi.ianianale.shop].png",
+    alt: "Profile",
+    caption: "User profile page displaying personal information, achievements, earned badges, and participation history in environmental missions.",
+  },
+],
+  githubUrl: "https://github.com/ianbom/AduanEmisi.git",
+  demoUrl: "https://sobatbumi.ianianale.shop/login",
+  featured: true,
+  thumbnail: "/sobatbumi/FireShot Capture 166 - SobatBumi - [sobatbumi.ianianale.shop].png"
+},
   {
     slug: "rentease",
     title: "RentEase",
@@ -67,7 +133,7 @@ export const projects: Project[] = [
     ],
     githubUrl: "https://github.com/ianbom/RentEase.git",
     demoUrl: "https://rentease.ianianale.shop/login",
-    featured: true,
+    featured: false,
     thumbnail: "/rentease/FireShot Capture 051 - Home - RentEase - Penyewaan Barang dan Jasa - [127.0.0.1].png"
   },
  {
@@ -280,7 +346,7 @@ features: [
         caption: "Patiens detail page",
       },
     ],
-     githubUrl: "https://github.com",
+     githubUrl: "https://github.com/ianbom/klinik-pens.git",
     demoUrl: "https://github.com",
     featured: false,
     thumbnail: "/eklinik/36.jpg"
