@@ -45,7 +45,7 @@ export const projects: Project[] = [
     caption: "Displays a comprehensive list of environmental reports submitted by users, allowing admins to monitor and manage incoming issues efficiently.",
   },
   {
-    url: "/sobatbumi/FireShot Capture 168 - Sobatbumi - [sobatbumi.ianianale.shop].png",
+    url: "/sobatbumi/FireShot Capture 168 - SobatBumi - [sobatbumi.ianianale.shop].png",
     alt: "Report Detail",
     caption: "Shows detailed information about a specific environmental report, including location, description, and supporting images for verification.",
   },
