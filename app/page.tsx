@@ -94,17 +94,26 @@ const certificates = [
     issuer: "Kampus Merdeka",
     date: "Dec 2024",
     credentialId: "11378206",
-    description: "Junior Backend Application Developer",
+    description: "This certificate is awarded to Me in recognition of successfully completing the Certified Internship and Independent Study Program (MSIB) Batch 7, organized by LLDIKTI Region VII East Java.",
     verificationUrl: "/SISFOR_IAN ALE.pdf",
     logo: "/placeholder.svg?height=60&width=60",
   },
   {
     title: "1st Place Web Development",
-    issuer: "National Competition Silogi Expo ",
+    issuer: "National Competition Silogi Expo - UNSIKA",
+    date: "July 2025",
+    credentialId: "-",
+    description: "This certificate is awarded to Me as the 1st Place Winner in the Web Development Category at the National Competition Silogy Expo 2025, organized by the Information Systems Student Association, Universitas Singaperbangsa Karawang (UNSIKA).",
+    verificationUrl: "/Silogy Expo - Ian Ale Hansyah - Web Dev Juara 1_page-0001.jpg",
+    logo: "/placeholder.svg?height=60&width=60",
+  },
+    {
+    title: "1st Place Web Development",
+    issuer: "Technology Innovative Challenge (TIC) - UNEJ ",
     date: "August 2025",
     credentialId: "-",
-    description: "Tim Kebut Semalam Creating Platform WargaUsaha",
-    verificationUrl: "/silogy.jpg",
+    description: "Certificate awarded by the Faculty of Computer Science, University of Jember, through the Information Technology Student Association (HIMATIF) to Me as 1st Place Winner in the Technology Innovative Challenge (TIC) 8.0 – National Website Development Competition.",
+    verificationUrl: "/tic.png",
     logo: "/placeholder.svg?height=60&width=60",
   },
 ];
@@ -193,7 +202,7 @@ export default function HomePage() {
                 className="text-lg px-8 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl"
                 asChild // Penting: Agar Button berperilaku sebagai Link
               >
-                <Link href="/CV_Ian_Fullstack.pdf" target="_blank" rel="noopener noreferrer">
+                <Link href="/Ian_CV_Baru.pdf" target="_blank" rel="noopener noreferrer">
                   <Download className="mr-2 h-5 w-5" />
                   View CV
                 </Link>
@@ -384,10 +393,11 @@ export default function HomePage() {
                       <p className="text-muted-foreground text-sm leading-relaxed">{cert.description}</p>
 
                       <div className="space-y-2">
-                        <div className="text-sm">
+                        {/* <div className="text-sm"> 
                           <span className="font-medium">Credential ID: </span>
                           <span className="text-muted-foreground font-mono">{cert.credentialId}</span>
                         </div>
+                        */}
 
                         <Button
                           variant="outline"
