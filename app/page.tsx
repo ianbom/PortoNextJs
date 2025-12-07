@@ -21,7 +21,8 @@ import {
   SiMongodb,
   SiGithub,
   SiExpress,
-  SiFlutter, // Menggunakan SiAmazonaws untuk AWS, karena SiAmazon lebih generik
+  SiFlutter,
+  SiDocker, // Menggunakan SiAmazonaws untuk AWS, karena SiAmazon lebih generik
 } from "react-icons/si";
 
 // --- Data Definitions ---
@@ -33,7 +34,7 @@ const skills = [
   "Tailwind CSS",
   "Laravel",
   "Node.js",
-  "Bootstrap",
+  "Docker",
   "PostgreSQL",
   "MongoDB",
   "Github",
@@ -48,7 +49,7 @@ const skillIcons = {
   "Tailwind CSS": SiTailwindcss,
   "Laravel": SiLaravel,
   "Node.js": SiNodedotjs,
-  "Bootstrap": SiBootstrap,
+  "Docker": SiDocker,
   "PostgreSQL": SiPostgresql,
   "MongoDB": SiMongodb,
   "Github": SiGithub,
@@ -114,6 +115,15 @@ const certificates = [
     credentialId: "-",
     description: "Certificate awarded by the Faculty of Computer Science, University of Jember, through the Information Technology Student Association (HIMATIF) to Me as 1st Place Winner in the Technology Innovative Challenge (TIC) 8.0 – National Website Development Competition.",
     verificationUrl: "/tic.png",
+    logo: "/placeholder.svg?height=60&width=60",
+  },
+  {
+    title: "3rd Place KMIPN E-Government",
+    issuer: "BAKORMA, Diktisaintek ",
+    date: "October 2025",
+    credentialId: "-",
+    description: "Won 3rd place in the KMIPN (national competition) in the E-Government category for developing digital solutions to improve government services and public engagement.",
+    verificationUrl: "/KMIPN .jpg",
     logo: "/placeholder.svg?height=60&width=60",
   },
 ];
@@ -202,7 +212,7 @@ export default function HomePage() {
                 className="text-lg px-8 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl"
                 asChild // Penting: Agar Button berperilaku sebagai Link
               >
-                <Link href="/Ian_CV_Baru.pdf" target="_blank" rel="noopener noreferrer">
+                <Link href="/CV Ian Ale H.pdf" target="_blank" rel="noopener noreferrer">
                   <Download className="mr-2 h-5 w-5" />
                   View CV
                 </Link>
@@ -224,7 +234,7 @@ export default function HomePage() {
                 className="text-lg px-8 border-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                 asChild
               >
-                <Link href="https://shorturl.at/t4V3r" target="_blank" rel="noopener noreferrer">
+                <Link href="https://www.canva.com/design/DAGrfgjDD_4/XeqpoH6G26wjL1e7ncl-4w/edit?utm_content=DAGrfgjDD_4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="mr-2 h-5 w-5" />
                   View Portofolio Ppt
                 </Link>

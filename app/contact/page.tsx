@@ -179,7 +179,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="font-medium">Phone</p>
-                    <p className="text-muted-foreground">(+62) 812 339 4116</p>
+                    <p className="text-muted-foreground">(+62) 812 3391 4116</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">

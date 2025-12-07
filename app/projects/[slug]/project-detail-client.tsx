@@ -64,6 +64,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
               Live Demo
             </Link>
           </Button>
+      
           <Button
             size="lg"
             variant="outline"
@@ -74,6 +75,19 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
               <Github className="mr-2 h-5 w-5" />
               View Code
             </Link>
+          </Button>
+
+              <Button
+            size="lg"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300"
+            asChild
+          >
+            {project.videoUrl && (
+                  <Link href={project.videoUrl} target="_blank" className="flex items-center">
+                    <ExternalLink className="mr-2 h-5 w-5" />
+                    Preview Video
+                  </Link>
+                )}
           </Button>
         </div>
       </motion.div>
@@ -254,6 +268,20 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                   <Github className="mr-2 h-5 w-5" />
                   Source Code
                 </Link>
+              </Button>
+
+              <Button
+                size="lg"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 flex-1"
+                asChild
+              > 
+              {project.videoUrl && (
+                  <Link href={project.videoUrl} target="_blank" className="flex items-center">
+                    <ExternalLink className="mr-2 h-5 w-5" />
+                    Preview Video
+                  </Link>
+                )}
+
               </Button>
             </div>
           </CardContent>

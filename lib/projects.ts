@@ -16,7 +16,9 @@ export interface Project {
   demoUrl: string
   featured: boolean
   thumbnail: string
+  videoUrl?: string     
 }
+
 
 export const projects: Project[] = [
  {
@@ -80,10 +82,81 @@ export const projects: Project[] = [
     caption: "User profile page displaying personal information, achievements, earned badges, and participation history in environmental missions.",
   },
 ],
+  videoUrl: "https://youtu.be/7AT-kHSZ0b4",
   githubUrl: "https://github.com/ianbom/AduanEmisi.git",
   demoUrl: "https://sobatbumi.ianianale.shop/login",
   featured: true,
   thumbnail: "/sobatbumi/FireShot Capture 166 - SobatBumi - [sobatbumi.ianianale.shop].png"
+},
+
+{
+  slug: "simkes",
+  title: "SIMKESIA",
+  description: "A health information system for maternal & child care, facility management, and clinical record-keeping.",
+  fullDescription: "SIMKESIA is a web-based health information system focused on managing maternal and child health (ANC, child growth), facility and staff administration, online consultations, and patient records. The platform offers patient and staff portals, growth charts, media-supported examination records, a chatbot for basic triage, and administrative dashboards for facility and superadmin roles to monitor services and KPIs.",
+  features: [
+    "Patient portal: profile, family management, and medical history",
+    "Maternal care (ANC): pregnancy records, checkups, and fetal measurements",
+    "Child care: growth tracking with percentile charts and developmental graphs",
+    "Upload and view examination photos and media with zoom modal",
+    "Online consultation: request, schedule, and join consultations",
+    "Chatbot for basic health guidance and context-aware suggestions",
+    "Facility (Faskes) management: CRUD for facilities and staff",
+    "Role-based access: patient, staff, admin-faskes, superadmin",
+    "Administrative dashboards and reports for monitoring services",
+    "Export and print patient data and examination history",
+    "Maps integration for facility locations",
+    "UI built with reusable components and responsive design"
+  ],
+  technologies: [
+    "Laravel",
+    "Inertia.js",
+    "React",
+    "TypeScript",
+    "MySQL",
+    "Tailwind CSS",
+    "Recharts (or Chart.js)",
+    "Leaflet Maps",
+    "Vite",
+    "Axios"
+  ],
+  images: [
+    {
+      "url": "/simkesia/list obat.png",
+      "alt": "List Medicine",
+      "caption": "List medicine to support maternal and child health care."
+    },
+    {
+      "url": "/simkesia/graf anak.png",
+      "alt": "Growth Chart",
+      "caption": "Child and fetal growth charts showing weight, height, and head circumference over time."
+    },
+    {
+      "url": "/simkesia/graf hml.png",
+      "alt": "ANC History",
+      "caption": "Detailed ANC checkup list with measurements, vitals, and media attachments."
+    },
+    {
+      "url": "/simkesia/chatbit.png",
+      "alt": "Chatbot",
+      "caption": "Chatbot interface for quick health guidance and context building."
+    },
+    {
+      "url": "/simkesia/faskes map.png",
+      "alt": "Facilities",
+      "caption": "List of health facilities with location and contact details."
+    },
+    {
+      "url": "/simkesia/meet.png",
+      "alt": "Online Consultation",
+      "caption": "Consultation detail with video call link"
+    }
+  ],
+  videoUrl: "https://youtu.be/MX6tX80Vumk",
+  githubUrl: "https://github.com/ianbom/Simkes.git",
+  demoUrl: "https://simkesia.ianianale.shop/",
+  featured: true,
+  thumbnail: "/simkesia/home por.png"
 },
   {
     slug: "rentease",
@@ -189,6 +262,7 @@ export const projects: Project[] = [
       caption: "Profile user"
     }
   ],
+  videoUrl: "https://youtu.be/_03SNdteHr4",
   githubUrl: "https://github.com/ianbom/WargaUsaha",
   demoUrl: "https://wargausaha.ianianale.shop/login",
   featured: true, 
