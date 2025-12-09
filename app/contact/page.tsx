@@ -151,11 +151,14 @@ export default function ContactPage() {
           {/* Contact Information */}
           <motion.div
             initial="initial"
-            animate="animate"
-            variants={{
-              ...fadeInUp,
-              transition: { ...fadeInUp.transition, delay: 0.2 },
-            }}
+              animate="animate"
+              variants={
+                // Cast to any to avoid strict Variant type issues with custom transition delay
+                ({
+                  ...fadeInUp,
+                  transition: { duration: 0.6, delay: 0.2 },
+                } as any)
+              }
             className="space-y-8"
           >
             <Card>

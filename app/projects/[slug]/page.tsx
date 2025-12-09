@@ -7,9 +7,9 @@ import type { Metadata } from "next"
 import ProjectDetailClient from "./project-detail-client"
 
 interface ProjectPageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export async function generateStaticParams() {
@@ -20,7 +20,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
-  const project = getProjectBySlug(params.slug)
+  const { slug } = await params
+  const project = getProjectBySlug(slug)
 
   if (!project) {
     return {
@@ -34,13 +35,14 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
     openGraph: {
       title: project.title,
       description: project.description,
-      images: [project.image],
+      images: [project.thumbnail],
     },
   }
 }
 
-export default function ProjectDetailPage({ params }: ProjectPageProps) {
-  const project = getProjectBySlug(params.slug)
+export default async function ProjectDetailPage({ params }: ProjectPageProps) {
+  const { slug } = await params
+  const project = getProjectBySlug(slug)
 
   if (!project) {
     notFound()

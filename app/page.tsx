@@ -7,6 +7,7 @@ import { Download, ExternalLink, Github, Linkedin, Instagram, MapPin, Calendar, 
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import type { IconType } from "react-icons";
 
 // Import ikon dari react-icons
 import {
@@ -42,7 +43,7 @@ const skills = [
   "Flutter",
 ];
 
-const skillIcons = {
+const skillIcons: Record<string, IconType> = {
   "Next.js": SiNextdotjs,
   "React": SiReact,
   "TypeScript": SiTypescript,
