@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Github, ExternalLink, CheckCircle, ChevronLeft, ChevronRight } from "lucide-react"
+import { Github, ExternalLink, CheckCircle, ChevronLeft, ChevronRight, Copy, Check, Mail, KeyRound } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -36,6 +36,8 @@ const itemVariants = {
 
 export default function ProjectDetailClient({ project }: ProjectDetailClientProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [copiedEmail, setCopiedEmail] = useState(false)
+  const [copiedPassword, setCopiedPassword] = useState(false)
 
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % project.images.length)
@@ -43,6 +45,17 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
 
   const prevImage = () => {
     setCurrentImageIndex((prev) => (prev - 1 + project.images.length) % project.images.length)
+  }
+
+  const copyToClipboard = async (text: string, type: 'email' | 'password') => {
+    await navigator.clipboard.writeText(text)
+    if (type === 'email') {
+      setCopiedEmail(true)
+      setTimeout(() => setCopiedEmail(false), 2000)
+    } else {
+      setCopiedPassword(true)
+      setTimeout(() => setCopiedPassword(false), 2000)
+    }
   }
 
   return (
@@ -77,26 +90,94 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
             </Link>
           </Button>
 
-              <Button
-            size="lg"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300"
-            asChild
-          >
-            {project.videoUrl && (
-                  <Link href={project.videoUrl} target="_blank" className="flex items-center">
-                    <ExternalLink className="mr-2 h-5 w-5" />
-                    Preview Video
-                  </Link>
-                )}
-          </Button>
+          {project.videoUrl && (
+            <Button
+              size="lg"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300"
+              asChild
+            >
+              <Link href={project.videoUrl} target="_blank">
+                <ExternalLink className="mr-2 h-5 w-5" />
+                Preview Video
+              </Link>
+            </Button>
+          )}
         </div>
       </motion.div>
+
+      {/* Demo Account Credentials */}
+      {project.demoCredentials && (
+        <motion.div variants={fadeInUp}>
+          <Card className="border-2 border-primary/20 bg-primary/5">
+            <CardHeader>
+              <CardTitle className="text-2xl flex items-center gap-2">
+                <KeyRound className="h-6 w-6 text-primary" />
+                Demo Account
+              </CardTitle>
+              <CardDescription>Use these credentials to test the application</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div className="flex items-center justify-between p-4 bg-background rounded-lg border">
+                  <div className="flex items-center gap-3">
+                    <Mail className="h-5 w-5 text-muted-foreground" />
+                    <div>
+                      <p className="text-xs text-muted-foreground mb-1">Email</p>
+                      <p className="font-mono font-medium">{project.demoCredentials.email}</p>
+                    </div>
+                  </div>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => copyToClipboard(project.demoCredentials!.email, 'email')}
+                    className="hover:bg-primary/10"
+                  >
+                    {copiedEmail ? (
+                      <Check className="h-4 w-4 text-green-500" />
+                    ) : (
+                      <Copy className="h-4 w-4" />
+                    )}
+                  </Button>
+                </div>
+
+                <div className="flex items-center justify-between p-4 bg-background rounded-lg border">
+                  <div className="flex items-center gap-3">
+                    <KeyRound className="h-5 w-5 text-muted-foreground" />
+                    <div>
+                      <p className="text-xs text-muted-foreground mb-1">Password</p>
+                      <p className="font-mono font-medium">{project.demoCredentials.password}</p>
+                    </div>
+                  </div>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => copyToClipboard(project.demoCredentials!.password, 'password')}
+                    className="hover:bg-primary/10"
+                  >
+                    {copiedPassword ? (
+                      <Check className="h-4 w-4 text-green-500" />
+                    ) : (
+                      <Copy className="h-4 w-4" />
+                    )}
+                  </Button>
+                </div>
+
+                {project.demoCredentials.note && (
+                  <div className="p-3 bg-muted/50 rounded-lg">
+                    <p className="text-sm text-muted-foreground">{project.demoCredentials.note}</p>
+                  </div>
+                )}
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+      )}
 
       {/* Project Images Gallery */}
      <motion.div variants={fadeInUp}>
         <Card className="overflow-hidden border-2 hover:border-primary/20 transition-all duration-300">
           <div className="relative">
-            <div className="relative aspect-video"> {/* Ini sudah 16:9 */}
+            <div className="relative aspect-video">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentImageIndex}
@@ -110,7 +191,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                     src={project.images?.[currentImageIndex]?.url || "/placeholder.svg"}
                     alt={project.images?.[currentImageIndex]?.alt || project.title}
                     fill
-                    className="object-contain" // Koreksi kesalahan ketik: object-contain
+                    className="object-contain"
                     priority
                   />
                 </motion.div>
@@ -270,19 +351,18 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                 </Link>
               </Button>
 
-              <Button
-                size="lg"
-                className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 flex-1"
-                asChild
-              > 
               {project.videoUrl && (
-                  <Link href={project.videoUrl} target="_blank" className="flex items-center">
+                <Button
+                  size="lg"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 flex-1"
+                  asChild
+                >
+                  <Link href={project.videoUrl} target="_blank">
                     <ExternalLink className="mr-2 h-5 w-5" />
                     Preview Video
                   </Link>
-                )}
-
-              </Button>
+                </Button>
+              )}
             </div>
           </CardContent>
         </Card>

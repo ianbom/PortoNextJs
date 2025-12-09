@@ -7,6 +7,11 @@ export interface ProjectImage {
 export interface Project {
   slug: string
   title: string
+  demoCredentials?: {
+    email: string
+    password: string
+    note?: string
+  }
   description: string
   fullDescription: string
   features: string[]
@@ -24,6 +29,11 @@ export const projects: Project[] = [
  {
   slug: "sobat-bumi",
   title: "SobatBumi",
+  demoCredentials: {
+      email: "ianbom@gmail.com",
+      password: "ianbom123",
+      note: "This is a demo account for user role 'citizen'."
+    },
   description: "A collaborative platform for reporting and taking real action on environmental issues in Indonesia.",
   fullDescription:
     "SobatBumi connects citizens, communities, and volunteers to report, verify, and follow up on environmental issues such as waste and pollution. The platform provides a reporting system, verification process, environmental action missions, and an admin dashboard for monitoring and statistics.",
@@ -92,6 +102,11 @@ export const projects: Project[] = [
 {
   slug: "simkes",
   title: "SIMKESIA",
+    demoCredentials: {
+      email: "warga1@gmail.com",
+      password: "password",
+      note: "This is a demo account for user role 'patient'."
+    },
   description: "A health information system for maternal & child care, facility management, and clinical record-keeping.",
   fullDescription: "SIMKESIA is a web-based health information system focused on managing maternal and child health (ANC, child growth), facility and staff administration, online consultations, and patient records. The platform offers patient and staff portals, growth charts, media-supported examination records, a chatbot for basic triage, and administrative dashboards for facility and superadmin roles to monitor services and KPIs.",
   features: [
@@ -161,6 +176,11 @@ export const projects: Project[] = [
   {
     slug: "rentease",
     title: "RentEase",
+        demoCredentials: {
+      email: "ianalebom@gmail.com",
+      password: "ianbom123",
+      note: "This is a demo account with role users."
+    },
     description: "Online platform that connects product owners with customers who want to rent various items easily and securely. ",
     fullDescription:
       "Rentease was created as a liaison between product providers and renters, with order management features to make it easier to manage products.",
@@ -212,6 +232,11 @@ export const projects: Project[] = [
  {
   slug: "warga-usaha",
   title: "WargaUsaha",
+    demoCredentials: {
+      email: "ianaleale123@gmail.com",
+      password: "ianbom123",
+      note: "This is a demo account with role users."
+    },
   description: "A digital platform that empowers local economies by connecting UMKM, job seekers, and service providers in one ecosystem.",
   fullDescription:
     "WargaUsaha is a community-focused digital platform designed to strengthen the local economy of Sidoarjo by providing an integrated space for selling local products, offering professional services, and posting job opportunities. Built with accessibility in mind, WargaUsaha helps small businesses (UMKM), freelancers, and job seekers promote their offerings and connect with the community efficiently. This platform enables economic growth through features like digital storefronts, service listings, job boards, and a built-in wallet system, all in one easy-to-use system.",
