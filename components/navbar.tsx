@@ -6,20 +6,20 @@ import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Moon, Sun, Menu } from "lucide-react"
-import { useTheme } from "next-themes"
 import { motion } from "framer-motion"
 
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Projects", href: "/projects" },
+  { name: "Services", href: "/services" },
   { name: "Contact", href: "/contact" },
+  { name: "Gallery", href: "/gallery" },
 ]
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
-  const { theme, setTheme } = useTheme()
 
   useEffect(() => {
     setMounted(true)
@@ -50,11 +50,10 @@ export default function Navbar() {
             <Link
               key={item.name}
               href={item.href}
-              className={`text-sm font-medium transition-all duration-300 hover:text-primary relative ${
-                pathname === item.href
-                  ? "text-primary after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-0.5 after:bg-primary after:rounded-full"
-                  : "text-muted-foreground hover:scale-105"
-              }`}
+              className={`text-sm font-medium transition-all duration-300 hover:text-primary relative ${pathname === item.href
+                ? "text-primary after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-0.5 after:bg-primary after:rounded-full"
+                : "text-muted-foreground hover:scale-105"
+                }`}
             >
               {item.name}
             </Link>
@@ -62,17 +61,7 @@ export default function Navbar() {
         </nav>
 
         <div className="flex items-center space-x-4">
-          {/* Theme Toggle */}
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-            className="hover:bg-primary/10 hover:scale-105 transition-all duration-300"
-          >
-            <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-            <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-            <span className="sr-only">Toggle theme</span>
-          </Button>
+
 
           {/* Mobile Navigation */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -89,9 +78,8 @@ export default function Navbar() {
                     key={item.name}
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    className={`text-lg font-medium transition-colors hover:text-primary ${
-                      pathname === item.href ? "text-primary" : "text-muted-foreground"
-                    }`}
+                    className={`text-lg font-medium transition-colors hover:text-primary ${pathname === item.href ? "text-primary" : "text-muted-foreground"
+                      }`}
                   >
                     {item.name}
                   </Link>

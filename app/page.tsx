@@ -213,7 +213,7 @@ export default function HomePage() {
                 className="text-lg px-8 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl"
                 asChild // Penting: Agar Button berperilaku sebagai Link
               >
-                <Link href="/CV Ian Ale H.pdf" target="_blank" rel="noopener noreferrer">
+                <Link href="/CV-Ian Ale H.pdf" target="_blank" rel="noopener noreferrer">
                   <Download className="mr-2 h-5 w-5" />
                   View CV
                 </Link>
