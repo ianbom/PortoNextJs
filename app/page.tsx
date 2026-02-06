@@ -86,8 +86,20 @@ const workExperience = [
       "Deploy the website and manage the server",
       "Contributed to API documentation and data validation for internal use",
     ],
-    technologies: ["Laravel", "MySQL", "Postman", "Git", "REST API", "Bootstrap"],
+    technologies: ["Laravel", "MySQL", "Postman", "Github", "REST API", "Bootstrap"],
   },
+  {
+  "company": "PT. Webcare Indonesia",
+  "position": "Freelance Web Developer",
+  "duration": "Dec 2024 - Present",
+  "location": "Indonesia",
+"description": "Develop custom websites tailored to client specifications, managing the entire lifecycle from requirements analysis to implementation.",
+  "achievements": [
+    "Conducted end-to-end client requirement analysis to ensure successful implementation",
+    "Designed website structure, interface, and functionality to align with business objectives and user experience"
+  ],
+  "technologies": ['Laravel', 'React Typescript', 'MySQL', 'Postman', 'Github', 'Tailwind Css', 'Inertia.js']
+}
 ];
 
 const certificates = [
