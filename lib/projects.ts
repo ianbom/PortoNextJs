@@ -94,7 +94,7 @@ export const projects: Project[] = [
     ],
     videoUrl: "https://youtu.be/7AT-kHSZ0b4",
     githubUrl: "https://github.com/ianbom/AduanEmisi.git",
-    demoUrl: "https://sobatbumi.ianianale.shop/login",
+    demoUrl: "https://sobatbumi.iandev.my.id/login",
     featured: true,
     thumbnail: "/sobatbumi/FireShot Capture 166 - SobatBumi - [sobatbumi.ianianale.shop].png"
   },
@@ -169,7 +169,7 @@ export const projects: Project[] = [
     ],
     videoUrl: "https://youtu.be/MX6tX80Vumk",
     githubUrl: "https://github.com/ianbom/Simkes.git",
-    demoUrl: "https://simkesia.ianianale.shop/",
+    demoUrl: "https://simkesia.iandev.my.id/",
     featured: true,
     thumbnail: "/simkesia/home por.png"
   },
@@ -225,7 +225,7 @@ export const projects: Project[] = [
       },
     ],
     githubUrl: "https://github.com/ianbom/RentEase.git",
-    demoUrl: "https://rentease.ianianale.shop/login",
+    demoUrl: "https://rentease.iandev.my.id/login",
     featured: true,
     thumbnail: "/rentease/FireShot Capture 051 - Home - RentEase - Penyewaan Barang dan Jasa - [127.0.0.1].png"
   },
@@ -289,7 +289,7 @@ export const projects: Project[] = [
     ],
     videoUrl: "https://youtu.be/_03SNdteHr4",
     githubUrl: "https://github.com/ianbom/WargaUsaha",
-    demoUrl: "https://wargausaha.ianianale.shop/login",
+    demoUrl: "https://wargausaha.iandev.my.id/login",
     featured: true,
     thumbnail: "/wargausaha/FireShot Capture 056 - WargaUsaha - [wargausaha.ianianale.shop].png"
   },
@@ -686,7 +686,7 @@ export const projects: Project[] = [
       },
     ],
     githubUrl: "https://github.com",
-    demoUrl: "https://github.com",
+    demoUrl: "https://rental-nextjs.vercel.app",
     featured: false,
     thumbnail: "/renttrip/FireShot Capture 069 -  - [rental-nextjs.vercel.app].png"
   },
