@@ -354,6 +354,11 @@ export const projects: Project[] = [
   {
     slug: "persona-q",
     title: "PersonaQ - Online Consultation",
+    demoCredentials: {
+      email: "ianalebom@gmail.com",
+      password: "ianbom123",
+      note: "This is a demo account with role patient."
+    },
     description: "An online consultation platform connecting users with professionals for personalized advice and guidance.",
     fullDescription: "PersonaQ (Online Consultation) is a modern web application that facilitates online consultations between users and professional advisors. The platform features a streamlined booking system, consultation history tracking, and an intuitive admin dashboard for managing consultations. Users can easily book sessions, view their consultation history, and receive personalized guidance through the platform.",
     features: [
