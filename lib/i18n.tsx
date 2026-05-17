@@ -40,6 +40,9 @@ const translations = {
     certificatesTitle: "Certificates & Achievements",
     viewCertificate: "View Certificate",
     skillsTitle: "Skills & Technologies",
+    skillsCtaTitle: "Want to see these skills in action?",
+    skillsCtaDesc: "Explore selected projects that show how I build full-stack, AI, and scalable web products.",
+    skillsCtaButton: "View Projects",
     projectsTitle: "My Projects",
     projectsIntro:
       "Here are some of the projects I've worked on. Each one represents a learning journey and showcases different aspects of my development skills.",
@@ -133,6 +136,9 @@ const translations = {
     certificatesTitle: "Sertifikat & Prestasi",
     viewCertificate: "Lihat Sertifikat",
     skillsTitle: "Keahlian & Teknologi",
+    skillsCtaTitle: "Ingin melihat skill ini diterapkan?",
+    skillsCtaDesc: "Jelajahi beberapa proyek pilihan yang menunjukkan cara saya membangun produk full-stack, AI, dan web yang scalable.",
+    skillsCtaButton: "Lihat Proyek",
     projectsTitle: "Proyek Saya",
     projectsIntro:
       "Berikut beberapa proyek yang pernah saya kerjakan. Setiap proyek merepresentasikan proses belajar dan menunjukkan berbagai kemampuan pengembangan saya.",

@@ -296,6 +296,22 @@ const SkillsSection = () => {
               );
             })}
           </motion.div>
+          <motion.div variants={fadeInUp} className="mt-16 text-center">
+            <div className="max-w-2xl mx-auto space-y-5">
+              <h3 className="text-2xl md:text-3xl font-bold">{t("skillsCtaTitle")}</h3>
+              <p className="text-muted-foreground text-lg">{t("skillsCtaDesc")}</p>
+              <Button
+                size="lg"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300"
+                asChild
+              >
+                <Link href="/projects">
+                  <ExternalLink className="mr-2 h-5 w-5" />
+                  {t("skillsCtaButton")}
+                </Link>
+              </Button>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
