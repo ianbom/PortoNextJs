@@ -541,10 +541,10 @@ export const projects: Project[] = [
   },
   {
     slug: "webcare-portal",
-    title: "Webcare Portal",
-    description: "A web-based client management system for PT Webcare with project tracking, invoicing, and real-time notifications.",
+    title: "Client Portal",
+    description: "A web-based client management system for a software house with project tracking, invoicing, and real-time notifications.",
     fullDescription:
-      "A robust client management platform developed for PT Webcare, a leading software house. This system streamlines the management of clients, projects, and communications. It features an intuitive dashboard for administrators and staff to manage client data, track project progress, handle invoicing, and monitor support tickets. Real-time notifications keep users updated on project milestones and client requests. The platform also offers comprehensive reporting tools, secure authentication, and role-based access control to ensure data privacy and efficient workflow.",
+      "A robust client management platform developed for a software house. This system streamlines the management of clients, projects, and communications. It features an intuitive dashboard for administrators and staff to manage client data, track project progress, handle invoicing, and monitor support tickets. Real-time notifications keep users updated on project milestones and client requests. The platform also offers comprehensive reporting tools, secure authentication, and role-based access control to ensure data privacy and efficient workflow.",
     features: [
       "Client data management",
       "Project tracking and status updates",
@@ -751,6 +751,62 @@ export const projects: Project[] = [
     demoUrl: "https://github.com",
     featured: false,
     thumbnail: "/course/FireShot Capture 076 - Login - [course.ianianale.shop].png"
+  },
+  {
+    slug: "syntra-ai",
+    title: "Syntra AI",
+    description: "An AI-powered scientific document search and question-answering platform built with Retrieval-Augmented Generation.",
+    fullDescription:
+      "Syntra AI is a Retrieval-Augmented Generation (RAG) platform for scientific document search and question answering. Admins can upload academic documents such as journals, theses, reports, or books in PDF format. The system processes each document into metadata, document chunks, and vector embeddings. Users can then ask questions through a chatbot, while the system retrieves the most relevant document passages and generates AI answers grounded in those sources. Syntra AI is more than a regular chatbot; it is an AI document assistant that helps users understand, search, and explore scientific literature faster.",
+    features: [
+      "Academic document management for PDF journals, theses, reports, and books",
+      "Document ingestion pipeline for extracting metadata, text, tables, images, and document structure",
+      "Metadata extraction for titles, authors, abstracts, years, DOI, publisher, language, and academic metadata",
+      "Vector embedding storage in PostgreSQL using pgvector for semantic search",
+      "RAG chatbot that retrieves relevant document chunks and answers based on source documents",
+      "Hybrid retrieval and reranking with vector search, metadata search, keyword search, possible questions, and reranker support",
+      "Source references for chatbot answers to improve transparency and auditability",
+      "Document processing monitoring for processing, completed, failed, and ingestion progress states",
+      "User and role management for admin document management and user chat access"
+    ],
+    technologies: [
+      "FastAPI",
+      "Next.js",
+      "React",
+      "TypeScript",
+      "PostgreSQL",
+      "pgvector",
+      "RAG",
+      "Vector Embeddings",
+      "LLM",
+      "Tailwind CSS"
+    ],
+    images: [
+      {
+        url: "/syntra-ai/chatbot.png",
+        alt: "Syntra AI Chatbot",
+        caption: "Chatbot page where users ask questions and receive AI answers grounded in relevant scientific document chunks.",
+      },
+      {
+        url: "/syntra-ai/list-document.png",
+        alt: "Syntra AI Document List",
+        caption: "Document management page for monitoring uploaded academic documents and their processing state.",
+      },
+      {
+        url: "/syntra-ai/ragas-score.png",
+        alt: "Syntra AI RAGAS Score",
+        caption: "RAG evaluation view showing quality metrics for retrieval and generated answers.",
+      },
+      {
+        url: "/syntra-ai/upload-doc.png",
+        alt: "Syntra AI Upload Document",
+        caption: "Upload interface for adding academic PDF documents into the ingestion pipeline.",
+      },
+    ],
+    githubUrl: "https://github.com",
+    demoUrl: "https://github.com",
+    featured: true,
+    thumbnail: "/syntra-ai/chatbot.png"
   },
 
 ]

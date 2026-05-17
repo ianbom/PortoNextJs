@@ -17,7 +17,7 @@ const translations = {
     navContact: "Contact",
     navGallery: "Gallery",
     navToggleMenu: "Toggle menu",
-    heroRole: "Full-Stack Developer",
+    heroRole: "Full-Stack Developer & AI Engineer",
     heroIntro:
       "Passionate about creating innovative web solutions and exploring the latest technologies. Currently pursuing my degree while building real-world projects.",
     viewCv: "View CV",
@@ -25,11 +25,15 @@ const translations = {
     viewPortfolioPpt: "View Portfolio Ppt",
     aboutTitle: "About Me",
     aboutP1:
-      "Hello! I'm Ian, a graduate of the D3 Informatics Engineering program at PENS, currently continuing my studies in the D4 Informatics Engineering program at the same institution. With over 10 application and website projects completed, I specialize as a Fullstack Developer skilled in PHP, Dart, and JavaScript, using frameworks like Laravel, Flutter, Express.js, Next.Js, and React.",
+      "Hello, I’m Ian, a Fullstack Developer and AI Engineer with a strong background in building modern, scalable, and AI-enhanced digital products.",
     aboutP2:
-      "I have professional experience as a Backend Developer Intern at Webcare Indonesia and through the MSIB Batch 7 program at LLDIKTI Region 7. I’m passionate about building efficient and scalable digital solutions.",
+      "I graduated from the D3 Informatics Engineering program at Politeknik Elektronika Negeri Surabaya (PENS) and am currently continuing my studies in the D4 Informatics Engineering program at the same institution. I have completed more than 10 application and website projects, working across frontend, backend, database, API integration, and AI-powered features.",
     aboutP3:
-      "When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing my knowledge with fellow developers.",
+      "My experience includes working as a Backend Developer Intern at a software development company and joining MSIB Batch 7, a certified internship program at a regional higher education institution. I mainly work with technologies such as Laravel, React, Next.js, FastAPI, Express.js, Flutter, PostgreSQL, vector databases, and AI engineering workflows.",
+    aboutP4:
+      "Beyond professional experience, I have won three national-level web development competitions, which helped me strengthen my ability to design, build, and deliver practical digital solutions under real constraints.",
+    aboutP5:
+      "I’m passionate about creating efficient, scalable, and intelligent web applications that solve real problems and deliver meaningful user experiences.",
     workExperience: "Work Experience",
     keyAchievements: "Key Achievements:",
     technologiesUsed: "Technologies Used:",
@@ -106,7 +110,7 @@ const translations = {
     navContact: "Kontak",
     navGallery: "Galeri",
     navToggleMenu: "Buka menu",
-    heroRole: "Full-Stack Developer",
+    heroRole: "Full-Stack Developer & AI Engineer",
     heroIntro:
       "Saya antusias membuat solusi web inovatif dan mengeksplorasi teknologi terbaru. Saat ini saya melanjutkan studi sambil membangun proyek nyata.",
     viewCv: "Lihat CV",
@@ -114,11 +118,15 @@ const translations = {
     viewPortfolioPpt: "Lihat Portofolio PPT",
     aboutTitle: "Tentang Saya",
     aboutP1:
-      "Halo! Saya Ian, lulusan D3 Teknik Informatika PENS dan saat ini melanjutkan studi D4 Teknik Informatika di institusi yang sama. Dengan lebih dari 10 proyek aplikasi dan website yang telah diselesaikan, saya berfokus sebagai Fullstack Developer dengan keahlian PHP, Dart, dan JavaScript, menggunakan framework seperti Laravel, Flutter, Express.js, Next.Js, dan React.",
+      "Halo, saya Ian, seorang Fullstack Developer dan AI Engineer dengan latar belakang kuat dalam membangun produk digital modern, scalable, dan didukung AI.",
     aboutP2:
-      "Saya memiliki pengalaman profesional sebagai Backend Developer Intern di Webcare Indonesia dan melalui program MSIB Batch 7 di LLDIKTI Wilayah 7. Saya antusias membangun solusi digital yang efisien dan scalable.",
+      "Saya merupakan lulusan D3 Teknik Informatika Politeknik Elektronika Negeri Surabaya (PENS) dan saat ini melanjutkan studi di program D4 Teknik Informatika pada institusi yang sama. Saya telah menyelesaikan lebih dari 10 proyek aplikasi dan website, mencakup frontend, backend, database, integrasi API, dan fitur berbasis AI.",
     aboutP3:
-      "Di luar coding, saya senang mengeksplorasi teknologi baru, berkontribusi pada proyek open-source, dan berbagi pengetahuan dengan sesama developer.",
+      "Pengalaman saya mencakup peran sebagai Backend Developer Intern di sebuah perusahaan pengembangan software dan mengikuti MSIB Batch 7, program magang bersertifikat di institusi pendidikan tinggi regional. Saya banyak bekerja dengan teknologi seperti Laravel, React, Next.js, FastAPI, Express.js, Flutter, PostgreSQL, vector database, dan alur kerja AI engineering.",
+    aboutP4:
+      "Di luar pengalaman profesional, saya telah memenangkan tiga kompetisi web development tingkat nasional, yang membantu memperkuat kemampuan saya dalam merancang, membangun, dan menghadirkan solusi digital praktis dengan batasan nyata.",
+    aboutP5:
+      "Saya antusias menciptakan aplikasi web yang efisien, scalable, dan cerdas untuk menyelesaikan masalah nyata serta menghadirkan pengalaman pengguna yang bermakna.",
     workExperience: "Pengalaman Kerja",
     keyAchievements: "Pencapaian Utama:",
     technologiesUsed: "Teknologi yang Digunakan:",
@@ -349,9 +357,9 @@ const projectText: Record<string, Partial<Record<Language, { description?: strin
   },
   "webcare-portal": {
     id: {
-      description: "Sistem manajemen klien PT Webcare untuk pelacakan proyek, invoice, dan notifikasi real-time.",
+      description: "Sistem manajemen klien untuk perusahaan software house dengan pelacakan proyek, invoice, dan notifikasi real-time.",
       fullDescription:
-        "Platform manajemen klien untuk PT Webcare yang membantu mengelola klien, proyek, komunikasi, invoice, tiket dukungan, laporan, autentikasi aman, dan role-based access control.",
+        "Platform manajemen klien untuk perusahaan software house yang membantu mengelola klien, proyek, komunikasi, invoice, tiket dukungan, laporan, autentikasi aman, dan role-based access control.",
       features: [
         "Manajemen data klien",
         "Pelacakan proyek dan update status",
@@ -420,6 +428,25 @@ const projectText: Record<string, Partial<Record<Language, { description?: strin
         "Pelacakan progres dan laporan",
         "Antarmuka responsif mobile",
         "Integrasi database dengan Laravel Eloquent ORM",
+      ],
+    },
+  },
+  "syntra-ai": {
+    id: {
+      description:
+        "Platform pencarian dan tanya-jawab dokumen ilmiah berbasis Retrieval-Augmented Generation.",
+      fullDescription:
+        "SyntraAI adalah platform pencarian dan tanya-jawab dokumen ilmiah berbasis Retrieval-Augmented Generation (RAG). Sistem ini memungkinkan admin mengunggah dokumen akademik seperti jurnal, thesis, report, atau buku dalam format PDF. Dokumen tersebut kemudian diproses menjadi metadata, potongan teks atau document chunks, dan embedding vector. Setelah itu, user dapat bertanya melalui chatbot, lalu sistem mencari bagian dokumen yang paling relevan dan menghasilkan jawaban AI berdasarkan sumber dokumen tersebut. SyntraAI bukan sekadar chatbot biasa, tetapi aplikasi AI document assistant untuk membantu pengguna memahami, mencari, dan mengeksplorasi literatur ilmiah secara lebih cepat.",
+      features: [
+        "Manajemen dokumen akademik untuk PDF seperti jurnal, thesis, report, atau buku",
+        "Document ingestion pipeline untuk mengekstrak metadata, teks, tabel, gambar, dan struktur dokumen",
+        "Metadata extraction untuk judul, penulis, abstrak, tahun, DOI, publisher, bahasa, dan metadata akademik lainnya",
+        "Vector embedding dengan PostgreSQL dan pgvector untuk pencarian semantik",
+        "Chatbot RAG yang mencari chunk dokumen relevan dan menjawab berdasarkan sumber dokumen",
+        "Hybrid retrieval dan reranking dengan vector search, metadata, keyword, possible questions, dan reranker",
+        "Referensi sumber jawaban agar hasil chatbot transparan, dapat diaudit, dan berbasis sumber",
+        "Monitoring proses dokumen untuk status diproses, selesai, gagal, dan progress ingestion",
+        "Manajemen user dan role untuk admin pengelola dokumen serta user pengguna fitur chat",
       ],
     },
   },

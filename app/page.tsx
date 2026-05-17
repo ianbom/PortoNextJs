@@ -42,6 +42,11 @@ const skills = [
   "Github",
   "Express.Js",
   "Flutter",
+  "FastAPI",
+  "Vector Database",
+  "AI Engineering",
+  "Context Engineering",
+  "AI Generation",
 ];
 
 const skillIcons: Record<string, IconType> = {
@@ -61,14 +66,14 @@ const skillIcons: Record<string, IconType> = {
 
 const workExperience = [
   {
-    company: "Webcare Indonesia",
+    company: "Software Development Company",
     position: "Backend Developer Intern",
     duration: "Jun 2024 - Dec 2024",
     location: "Surabaya, Indonesia",
     description:
-      "Collaborated as part of the Webcare development team to build and maintain client-requested web projects. Contributed to backend development and ensured features aligned with client requirements and project goals.",
+      "Collaborated as part of a software development team to build and maintain client-requested web projects. Contributed to backend development and ensured features aligned with client requirements and project goals.",
     descriptionId:
-      "Berkolaborasi sebagai bagian dari tim development Webcare untuk membangun dan memelihara proyek web sesuai permintaan klien. Berkontribusi pada pengembangan backend dan memastikan fitur sesuai kebutuhan klien serta tujuan proyek.",
+      "Berkolaborasi sebagai bagian dari tim pengembangan software untuk membangun dan memelihara proyek web sesuai permintaan klien. Berkontribusi pada pengembangan backend dan memastikan fitur sesuai kebutuhan klien serta tujuan proyek.",
     achievements: [
       "Developed and deployed RESTful APIs for client web applications using Laravel",
       "Integrated third-party services such as payment gateways and email automation",
@@ -84,14 +89,14 @@ const workExperience = [
     technologies: ["React", "TypeScript", "Tailwind CSS", "Git", "Laravel", "Bootstrap", 'Wordpress'],
   },
   {
-    company: "MSIB Batch 7 at LLDIKTI Region 7",
+    company: "Certified Internship Program at Regional Higher Education Institution",
     position: "Backend Developer Intern",
     duration: "Sep 2024 - Dec 2024",
     location: "Surabaya, Indonesia",
     description:
-      "Joined the backend development team to support the creation of internal web systems at LLDIKTI Region 7. Worked on developing RESTful APIs, managing databases, and assisting in system maintenance to improve internal workflows.",
+      "Joined the backend development team to support the creation of internal web systems at a regional higher education institution. Worked on developing RESTful APIs, managing databases, and assisting in system maintenance to improve internal workflows.",
     descriptionId:
-      "Bergabung dengan tim backend untuk mendukung pembuatan sistem web internal di LLDIKTI Wilayah 7. Berperan dalam pengembangan RESTful API, pengelolaan database, dan pemeliharaan sistem untuk meningkatkan alur kerja internal.",
+      "Bergabung dengan tim backend untuk mendukung pembuatan sistem web internal di institusi pendidikan tinggi regional. Berperan dalam pengembangan RESTful API, pengelolaan database, dan pemeliharaan sistem untuk meningkatkan alur kerja internal.",
     achievements: [
       "Developed and maintained several backend modules using Laravel",
       "Deploy the website and manage the server",
@@ -105,7 +110,7 @@ const workExperience = [
     technologies: ["Laravel", "MySQL", "Postman", "Github", "REST API", "Bootstrap"],
   },
   {
-  "company": "PT. Webcare Indonesia",
+  "company": "Software Development Company",
   "position": "Freelance Web Developer",
   "duration": "Dec 2024 - Present",
   "location": "Indonesia",
@@ -129,7 +134,8 @@ const certificates = [
     issuer: "Kampus Merdeka",
     date: "Dec 2024",
     credentialId: "11378206",
-    description: "This certificate is awarded to Me in recognition of successfully completing the Certified Internship and Independent Study Program (MSIB) Batch 7, organized by LLDIKTI Region VII East Java.",
+    description: "This certificate is awarded to me in recognition of successfully completing a certified internship and independent study program organized by a regional higher education institution.",
+    descriptionId: "Sertifikat ini diberikan kepada saya sebagai pengakuan atas keberhasilan menyelesaikan program magang dan studi independen bersertifikat yang diselenggarakan oleh institusi pendidikan tinggi regional.",
     verificationUrl: "/SISFOR_IAN ALE.pdf",
     logo: "/placeholder.svg?height=60&width=60",
   },
@@ -139,6 +145,7 @@ const certificates = [
     date: "July 2025",
     credentialId: "-",
     description: "This certificate is awarded to Me as the 1st Place Winner in the Web Development Category at the National Competition Silogy Expo 2025, organized by the Information Systems Student Association, Universitas Singaperbangsa Karawang (UNSIKA).",
+    descriptionId: "Sertifikat ini diberikan kepada saya sebagai Juara 1 kategori Web Development pada National Competition Silogy Expo 2025 yang diselenggarakan oleh Himpunan Mahasiswa Sistem Informasi Universitas Singaperbangsa Karawang (UNSIKA).",
     verificationUrl: "/Silogy Expo - Ian Ale Hansyah - Web Dev Juara 1_page-0001.jpg",
     logo: "/placeholder.svg?height=60&width=60",
   },
@@ -148,6 +155,7 @@ const certificates = [
     date: "August 2025",
     credentialId: "-",
     description: "Certificate awarded by the Faculty of Computer Science, University of Jember, through the Information Technology Student Association (HIMATIF) to Me as 1st Place Winner in the Technology Innovative Challenge (TIC) 8.0 – National Website Development Competition.",
+    descriptionId: "Sertifikat ini diberikan oleh Fakultas Ilmu Komputer Universitas Jember melalui Himpunan Mahasiswa Teknologi Informasi (HIMATIF) kepada saya sebagai Juara 1 Technology Innovative Challenge (TIC) 8.0 - Kompetisi Website Development Nasional.",
     verificationUrl: "/tic.png",
     logo: "/placeholder.svg?height=60&width=60",
   },
@@ -157,7 +165,56 @@ const certificates = [
     date: "October 2025",
     credentialId: "-",
     description: "Won 3rd place in the KMIPN (national competition) in the E-Government category for developing digital solutions to improve government services and public engagement.",
+    descriptionId: "Meraih Juara 3 pada KMIPN tingkat nasional kategori E-Government melalui pengembangan solusi digital untuk meningkatkan layanan pemerintahan dan keterlibatan masyarakat.",
     verificationUrl: "/KMIPN .jpg",
+    logo: "/placeholder.svg?height=60&width=60",
+  },
+  {
+    title: "Laravel 9 Website Development Course",
+    issuer: "Coding Studio",
+    date: "December 2025",
+    credentialId: "-",
+    description:
+      "Certificate for successfully completing the online course Mahir Membuat Website dengan Laravel 9, covering practical Laravel-based website development fundamentals.",
+    descriptionId:
+      "Sertifikat penyelesaian kursus online Mahir Membuat Website dengan Laravel 9, yang mencakup dasar pengembangan website praktis berbasis Laravel.",
+    verificationUrl: "/sertif/Sertif Cstudio.pdf",
+    logo: "/placeholder.svg?height=60&width=60",
+  },
+  {
+    title: "Professional Application Database Course",
+    issuer: "Coding Studio",
+    date: "December 2025",
+    credentialId: "-",
+    description:
+      "Certificate for successfully completing the online course Mahir Membuat Database Aplikasi Profesional, focused on database design and implementation for professional applications.",
+    descriptionId:
+      "Sertifikat penyelesaian kursus online Mahir Membuat Database Aplikasi Profesional, berfokus pada perancangan dan implementasi database untuk aplikasi profesional.",
+    verificationUrl: "/sertif/Sertif db costudio.pdf",
+    logo: "/placeholder.svg?height=60&width=60",
+  },
+  {
+    title: "Introduction to Generative AI - Art of the Possible",
+    issuer: "AWS Training & Certification",
+    date: "April 2026",
+    credentialId: "-",
+    description:
+      "AWS Training & Certification completion certificate for Introduction to Generative AI - Art of the Possible, introducing practical concepts and possibilities of generative AI.",
+    descriptionId:
+      "Sertifikat penyelesaian AWS Training & Certification untuk Introduction to Generative AI - Art of the Possible, yang memperkenalkan konsep praktis dan peluang penggunaan generative AI.",
+    verificationUrl: "/sertif/SertifAWS AI Gen.pdf",
+    logo: "/placeholder.svg?height=60&width=60",
+  },
+  {
+    title: "TOEFL Prediction Test Certificate",
+    issuer: "Central Course",
+    date: "April 2026",
+    credentialId: "2604245325",
+    description:
+      "Certificate of Achievement for the TOEFL Prediction Test with a total score of 503, covering listening comprehension, structure and written expression, and reading comprehension.",
+    descriptionId:
+      "Certificate of Achievement untuk TOEFL Prediction Test dengan total skor 503, mencakup listening comprehension, structure and written expression, serta reading comprehension.",
+    verificationUrl: "/sertif/TOEFL IAN ALE.pdf",
     logo: "/placeholder.svg?height=60&width=60",
   },
 ];
@@ -310,6 +367,12 @@ export default function HomePage() {
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   {t("aboutP3")}
                 </p>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  {t("aboutP4")}
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  {t("aboutP5")}
+                </p>
                 <div className="flex gap-4 pt-4">
                   <Button variant="outline" size="icon" asChild>
                     <Link href="https://linkedin.com/in/ian-ale-h" target="_blank">
@@ -435,7 +498,9 @@ export default function HomePage() {
                       </div>
                     </CardHeader>
                     <CardContent className="space-y-4">
-                      <p className="text-muted-foreground text-sm leading-relaxed">{cert.description}</p>
+                      <p className="text-muted-foreground text-sm leading-relaxed">
+                        {language === "id" ? cert.descriptionId : cert.description}
+                      </p>
 
                       <div className="space-y-2">
                         {/* <div className="text-sm"> 

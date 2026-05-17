@@ -28,8 +28,8 @@ const galleryItems: GalleryItem[] = [
         category: "Internship",
         title: "MSIB Batch 7 Program",
         date: "Sep - Dec 2024",
-        location: "LLDIKTI Region 7, Surabaya",
-        description: "Final Prensentation Project dan upacara penutupan MSIB Batch 7 LLDIKTI 7",
+        location: "Regional Higher Education Institution, Surabaya",
+        description: "Final presentation project dan upacara penutupan program magang bersertifikat.",
     },
     {
         id: 2,
