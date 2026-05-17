@@ -24,6 +24,12 @@ import {
   SiGithub,
   SiExpress,
   SiFlutter,
+  SiFastapi,
+  SiOpenai,
+  SiGooglegemini,
+  SiLangchain,
+  SiLinux,
+  SiTerraform,
   SiDocker, // Menggunakan SiAmazonaws untuk AWS, karena SiAmazon lebih generik
 } from "react-icons/si";
 
@@ -37,6 +43,9 @@ const skills = [
   "Laravel",
   "Node.js",
   "Docker",
+  "Bootstrap",
+  "Linux",
+  "Infrastructure",
   "PostgreSQL",
   "MongoDB",
   "Github",
@@ -57,11 +66,19 @@ const skillIcons: Record<string, IconType> = {
   "Laravel": SiLaravel,
   "Node.js": SiNodedotjs,
   "Docker": SiDocker,
+  "Bootstrap": SiBootstrap,
+  "Linux": SiLinux,
+  "Infrastructure": SiTerraform,
   "PostgreSQL": SiPostgresql,
   "MongoDB": SiMongodb,
   "Github": SiGithub,
   "Express.Js": SiExpress,
   "Flutter": SiFlutter,
+  "FastAPI": SiFastapi,
+  "Vector Database": SiPostgresql,
+  "AI Engineering": SiOpenai,
+  "Context Engineering": SiLangchain,
+  "AI Generation": SiGooglegemini,
 };
 
 const workExperience = [
