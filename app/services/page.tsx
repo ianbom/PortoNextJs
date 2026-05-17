@@ -1,14 +1,11 @@
+"use client";
+
 import ServiceCard from "@/components/services/service-card";
 import ProcessSteps from "@/components/services/process-steps";
 import { Layout, ShoppingBag, Laptop, Megaphone, Paintbrush, ShieldCheck, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { motion } from "framer-motion";
-
-export const metadata = {
-    title: "Services | Ian Ale Hansyah",
-    description: "Professional web development services including Full-stack development, API design, and UI implementation.",
-};
+import { useLanguage } from "@/lib/i18n";
 
 const services = [
     {
@@ -86,16 +83,18 @@ const services = [
 ];
 
 export default function ServicesPage() {
+    const { t } = useLanguage();
+
     return (
         <div className="min-h-screen">
             {/* Hero Section */}
             <section className="py-20 px-4 bg-muted/30">
                 <div className="max-w-4xl mx-auto text-center space-y-6">
                     <h1 className="text-4xl md:text-6xl font-bold">
-                        Solutions Built for <span className="text-primary">Growth</span>
+                        {t("servicesHero")} <span className="text-primary">{t("servicesGrowth")}</span>
                     </h1>
                     <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                        Helper businesses transform ideas into powerful, scalable, and user-centric digital experiences.
+                        {t("servicesIntro")}
                     </p>
                 </div>
             </section>
@@ -122,9 +121,9 @@ export default function ServicesPage() {
             <section className="py-20 px-4 bg-muted/30">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4">How I Work</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("howIWork")}</h2>
                         <p className="text-muted-foreground max-w-2xl mx-auto">
-                            A transparent and efficient workflow ensuring your project is delivered on time and to the highest standard.
+                            {t("howIWorkDesc")}
                         </p>
                     </div>
                     <ProcessSteps />
@@ -134,13 +133,13 @@ export default function ServicesPage() {
             {/* CTA Section */}
             <section className="py-20 px-4">
                 <div className="max-w-4xl mx-auto text-center bg-primary/5 rounded-3xl p-12 border-2 border-primary/10">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to start your project?</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-6">{t("ctaTitle")}</h2>
                     <p className="text-xl text-muted-foreground mb-8">
-                        Let's discuss how we can bring your vision to life today.
+                        {t("ctaDesc")}
                     </p>
                     <Button size="lg" className="text-lg px-8" asChild>
                         <Link href="/contact">
-                            Let's Talk <ArrowRight className="ml-2 w-5 h-5" />
+                            {t("letsTalk")} <ArrowRight className="ml-2 w-5 h-5" />
                         </Link>
                     </Button>
                 </div>

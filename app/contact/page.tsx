@@ -12,6 +12,7 @@ import { Github, Linkedin, Instagram, Mail, MapPin, Phone } from "lucide-react"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { useToast } from "@/hooks/use-toast"
+import { useLanguage } from "@/lib/i18n"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -21,6 +22,7 @@ export default function ContactPage() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const { toast } = useToast()
+  const { t } = useLanguage()
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -38,7 +40,7 @@ export default function ContactPage() {
     if (!formData.name || !formData.email || !formData.message) {
       toast({
         title: "Error",
-        description: "Please fill in all fields.",
+        description: t("fillAllFields"),
         variant: "destructive",
       })
       setIsSubmitting(false)
@@ -50,7 +52,7 @@ export default function ContactPage() {
     if (!emailRegex.test(formData.email)) {
       toast({
         title: "Error",
-        description: "Please enter a valid email address.",
+        description: t("validEmail"),
         variant: "destructive",
       })
       setIsSubmitting(false)
@@ -60,8 +62,8 @@ export default function ContactPage() {
     // Simulate form submission
     setTimeout(() => {
       toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
+        title: t("messageSent"),
+        description: t("messageSentDesc"),
       })
       setFormData({ name: "", email: "", message: "" })
       setIsSubmitting(false)
@@ -83,10 +85,9 @@ export default function ContactPage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Get In Touch</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">{t("contactTitle")}</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            I'm always open to discussing new opportunities, interesting projects, or just having a chat about
-            technology. Feel free to reach out!
+            {t("contactIntro")}
           </p>
         </motion.div>
 
@@ -95,18 +96,18 @@ export default function ContactPage() {
           <motion.div initial="initial" animate="animate" variants={fadeInUp}>
             <Card className="border-2 hover:border-primary/30 transition-all duration-300 shadow-lg">
               <CardHeader>
-                <CardTitle className="text-2xl">Send me a message</CardTitle>
-                <CardDescription>Fill out the form below and I'll get back to you as soon as possible.</CardDescription>
+                <CardTitle className="text-2xl">{t("sendMessageTitle")}</CardTitle>
+                <CardDescription>{t("sendMessageDesc")}</CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
-                    <Label htmlFor="name">Name</Label>
+                    <Label htmlFor="name">{t("name")}</Label>
                     <Input
                       id="name"
                       name="name"
                       type="text"
-                      placeholder="Your full name"
+                      placeholder={t("fullNamePlaceholder")}
                       value={formData.name}
                       onChange={handleInputChange}
                       required
@@ -125,11 +126,11 @@ export default function ContactPage() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
+                    <Label htmlFor="message">{t("message")}</Label>
                     <Textarea
                       id="message"
                       name="message"
-                      placeholder="Tell me about your project or just say hello!"
+                      placeholder={t("messagePlaceholder")}
                       rows={6}
                       value={formData.message}
                       onChange={handleInputChange}
@@ -141,7 +142,7 @@ export default function ContactPage() {
                     className="w-full bg-brand-gradient hover:bg-brand-gradient-dark shadow-lg hover:shadow-xl transition-all duration-300"
                     disabled={isSubmitting}
                   >
-                    {isSubmitting ? "Sending..." : "Send Message"}
+                    {isSubmitting ? t("sending") : t("sendMessage")}
                   </Button>
                 </form>
               </CardContent>
@@ -163,8 +164,8 @@ export default function ContactPage() {
           >
             <Card>
               <CardHeader>
-                <CardTitle className="text-2xl">Contact Information</CardTitle>
-                <CardDescription>Here are the different ways you can reach me.</CardDescription>
+                <CardTitle className="text-2xl">{t("contactInformation")}</CardTitle>
+                <CardDescription>{t("contactInformationDesc")}</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="flex items-center space-x-4">
@@ -181,7 +182,7 @@ export default function ContactPage() {
                     <Phone className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <p className="font-medium">Phone</p>
+                    <p className="font-medium">{t("phone")}</p>
                     <p className="text-muted-foreground">(+62) 812 3391 4116</p>
                   </div>
                 </div>
@@ -190,7 +191,7 @@ export default function ContactPage() {
                     <MapPin className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <p className="font-medium">Location</p>
+                    <p className="font-medium">{t("location")}</p>
                     <p className="text-muted-foreground">Surabaya, Indonesia</p>
                   </div>
                 </div>
@@ -199,8 +200,8 @@ export default function ContactPage() {
 
             <Card>
               <CardHeader>
-                <CardTitle className="text-xl">Follow Me</CardTitle>
-                <CardDescription>Connect with me on social media platforms.</CardDescription>
+                <CardTitle className="text-xl">{t("followMe")}</CardTitle>
+                <CardDescription>{t("followMeDesc")}</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex space-x-4">
@@ -240,15 +241,14 @@ export default function ContactPage() {
 
             <Card>
               <CardHeader>
-                <CardTitle className="text-xl">Let's Work Together</CardTitle>
+                <CardTitle className="text-xl">{t("letsWorkTogether")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  I'm currently available for freelance work and open to discussing new opportunities. Whether you have
-                  a project in mind or just want to connect, I'd love to hear from you.
+                  {t("letsWorkTogetherDesc")}
                 </p>
                 <Button asChild>
-                  <Link href="/projects">View My Work</Link>
+                  <Link href="/projects">{t("viewMyWork")}</Link>
                 </Button>
               </CardContent>
             </Card>

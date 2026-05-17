@@ -8,6 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import type { IconType } from "react-icons";
+import { useLanguage } from "@/lib/i18n";
 
 // Import ikon dari react-icons
 import {
@@ -66,11 +67,19 @@ const workExperience = [
     location: "Surabaya, Indonesia",
     description:
       "Collaborated as part of the Webcare development team to build and maintain client-requested web projects. Contributed to backend development and ensured features aligned with client requirements and project goals.",
+    descriptionId:
+      "Berkolaborasi sebagai bagian dari tim development Webcare untuk membangun dan memelihara proyek web sesuai permintaan klien. Berkontribusi pada pengembangan backend dan memastikan fitur sesuai kebutuhan klien serta tujuan proyek.",
     achievements: [
       "Developed and deployed RESTful APIs for client web applications using Laravel",
       "Integrated third-party services such as payment gateways and email automation",
       "Refactored legacy PHP code to modern Laravel structure, improving maintainability",
       "Collaborated with frontend team to connect backend APIs with React interfaces",
+    ],
+    achievementsId: [
+      "Mengembangkan dan men-deploy RESTful API untuk aplikasi web klien menggunakan Laravel",
+      "Mengintegrasikan layanan pihak ketiga seperti payment gateway dan automasi email",
+      "Melakukan refactor kode PHP legacy ke struktur Laravel modern untuk meningkatkan maintainability",
+      "Berkolaborasi dengan tim frontend untuk menghubungkan API backend dengan antarmuka React",
     ],
     technologies: ["React", "TypeScript", "Tailwind CSS", "Git", "Laravel", "Bootstrap", 'Wordpress'],
   },
@@ -81,10 +90,17 @@ const workExperience = [
     location: "Surabaya, Indonesia",
     description:
       "Joined the backend development team to support the creation of internal web systems at LLDIKTI Region 7. Worked on developing RESTful APIs, managing databases, and assisting in system maintenance to improve internal workflows.",
+    descriptionId:
+      "Bergabung dengan tim backend untuk mendukung pembuatan sistem web internal di LLDIKTI Wilayah 7. Berperan dalam pengembangan RESTful API, pengelolaan database, dan pemeliharaan sistem untuk meningkatkan alur kerja internal.",
     achievements: [
       "Developed and maintained several backend modules using Laravel",
       "Deploy the website and manage the server",
       "Contributed to API documentation and data validation for internal use",
+    ],
+    achievementsId: [
+      "Mengembangkan dan memelihara beberapa modul backend menggunakan Laravel",
+      "Melakukan deploy website dan mengelola server",
+      "Berkontribusi pada dokumentasi API dan validasi data untuk kebutuhan internal",
     ],
     technologies: ["Laravel", "MySQL", "Postman", "Github", "REST API", "Bootstrap"],
   },
@@ -94,9 +110,14 @@ const workExperience = [
   "duration": "Dec 2024 - Present",
   "location": "Indonesia",
 "description": "Develop custom websites tailored to client specifications, managing the entire lifecycle from requirements analysis to implementation.",
+  "descriptionId": "Mengembangkan website custom sesuai spesifikasi klien, mencakup seluruh siklus kerja dari analisis kebutuhan hingga implementasi.",
   "achievements": [
     "Conducted end-to-end client requirement analysis to ensure successful implementation",
     "Designed website structure, interface, and functionality to align with business objectives and user experience"
+  ],
+  "achievementsId": [
+    "Melakukan analisis kebutuhan klien secara end-to-end untuk memastikan implementasi berjalan sesuai target",
+    "Merancang struktur website, antarmuka, dan fungsionalitas agar selaras dengan tujuan bisnis serta pengalaman pengguna"
   ],
   "technologies": ['Laravel', 'React Typescript', 'MySQL', 'Postman', 'Github', 'Tailwind Css', 'Inertia.js']
 }
@@ -163,12 +184,14 @@ const itemVariants = {
 
 // --- Komponen SkillsSection (didefinisikan di luar HomePage) ---
 const SkillsSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
         <motion.div initial="initial" whileInView="animate" viewport={{ once: true }} variants={staggerContainer}>
           <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-center mb-16">
-            Skills & Technologies
+            {t("skillsTitle")}
           </motion.h2>
           <motion.div variants={fadeInUp} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {skills.map((skill, index) => {
@@ -207,6 +230,8 @@ const SkillsSection = () => {
 
 // --- Komponen HomePage Utama ---
 export default function HomePage() {
+  const { language, t } = useLanguage();
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -214,10 +239,9 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">Ian Ale Hansyah</h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8">Full-Stack Developer</p>
+            <p className="text-xl md:text-2xl text-muted-foreground mb-8">{t("heroRole")}</p>
             <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Passionate about creating innovative web solutions and exploring the latest technologies. Currently
-              pursuing my degree while building real-world projects.
+              {t("heroIntro")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
              <Button
@@ -227,7 +251,7 @@ export default function HomePage() {
               >
                 <Link href="/CV-Ian Ale H.pdf" target="_blank" rel="noopener noreferrer">
                   <Download className="mr-2 h-5 w-5" />
-                  View CV
+                  {t("viewCv")}
                 </Link>
               </Button>
               <Button
@@ -238,7 +262,7 @@ export default function HomePage() {
               >
                 <Link href="/projects">
                   <ExternalLink className="mr-2 h-5 w-5" />
-                  View Projects
+                  {t("viewProjects")}
                 </Link>
               </Button>
               <Button
@@ -249,7 +273,7 @@ export default function HomePage() {
               >
                 <Link href="https://www.canva.com/design/DAGrfgjDD_4/XeqpoH6G26wjL1e7ncl-4w/edit?utm_content=DAGrfgjDD_4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="mr-2 h-5 w-5" />
-                  View Portofolio Ppt
+                  {t("viewPortfolioPpt")}
                 </Link>
               </Button>
             </div>
@@ -262,7 +286,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <motion.div initial="initial" whileInView="animate" viewport={{ once: true }} variants={staggerContainer}>
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-center mb-16">
-              About Me
+              {t("aboutTitle")}
             </motion.h2>
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <motion.div variants={fadeInUp}>
@@ -277,18 +301,14 @@ export default function HomePage() {
               </motion.div>
               <motion.div variants={fadeInUp} className="space-y-6">
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Hello! I'm Ian, a graduate of the D3 Informatics Engineering program at PENS, 
-                  currently continuing my studies in the D4 Informatics Engineering program at the same institution. 
-                  With over 10 application and website projects completed, I specialize as a Fullstack Developer skilled in PHP, Dart, and JavaScript, using frameworks like Laravel, Flutter, Express.js, Next.Js, and React.
+                  {t("aboutP1")}
                 </p>
 
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  I have professional experience as a Backend Developer Intern at Webcare Indonesia and through the MSIB Batch 7 program at LLDIKTI Region 7.
-                  I’m passionate about building efficient and scalable digital solutions.
+                  {t("aboutP2")}
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  When I'm not coding, you can find me exploring new technologies, contributing to open-source projects,
-                  or sharing my knowledge with fellow developers.
+                  {t("aboutP3")}
                 </p>
                 <div className="flex gap-4 pt-4">
                   <Button variant="outline" size="icon" asChild>
@@ -318,7 +338,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <motion.div initial="initial" whileInView="animate" viewport={{ once: true }} variants={staggerContainer}>
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-center mb-16">
-              Work Experience
+              {t("workExperience")}
             </motion.h2>
             <div className="space-y-8">
               {workExperience.map((job, index) => (
@@ -347,12 +367,14 @@ export default function HomePage() {
                       </div>
                     </CardHeader>
                     <CardContent className="space-y-4">
-                      <p className="text-muted-foreground leading-relaxed">{job.description}</p>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {language === "id" ? job.descriptionId : job.description}
+                      </p>
 
                       <div>
-                        <h4 className="font-semibold mb-2">Key Achievements:</h4>
+                        <h4 className="font-semibold mb-2">{t("keyAchievements")}</h4>
                         <ul className="space-y-1">
-                          {job.achievements.map((achievement, achievementIndex) => (
+                          {(language === "id" ? job.achievementsId : job.achievements).map((achievement, achievementIndex) => (
                             <li key={achievementIndex} className="flex items-start gap-2 text-muted-foreground">
                               <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></span>
                               {achievement}
@@ -362,7 +384,7 @@ export default function HomePage() {
                       </div>
 
                       <div>
-                        <h4 className="font-semibold mb-2">Technologies Used:</h4>
+                        <h4 className="font-semibold mb-2">{t("technologiesUsed")}</h4>
                         <div className="flex flex-wrap gap-2">
                           {job.technologies.map((tech) => (
                             <Badge
@@ -389,7 +411,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <motion.div initial="initial" whileInView="animate" viewport={{ once: true }} variants={staggerContainer}>
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-center mb-16">
-              Certificates & Achievements
+              {t("certificatesTitle")}
             </motion.h2>
             <div className="grid md:grid-cols-2 gap-6">
               {certificates.map((cert, index) => (
@@ -430,7 +452,7 @@ export default function HomePage() {
                         >
                           <Link href={cert.verificationUrl} target="_blank">
                             <LinkIcon className="mr-2 h-4 w-4" />
-                            View Cerificate
+                            {t("viewCertificate")}
                           </Link>
                         </Button>
                       </div>

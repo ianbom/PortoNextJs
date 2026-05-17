@@ -1,10 +1,8 @@
 import { notFound } from "next/navigation"
-import Link from "next/link"
-import { ArrowLeft } from "lucide-react"
-import { Button } from "@/components/ui/button"
 import { getProjectBySlug, getAllProjects } from "@/lib/projects"
 import type { Metadata } from "next"
 import ProjectDetailClient from "./project-detail-client"
+import ProjectBreadcrumb from "./project-breadcrumb"
 
 interface ProjectPageProps {
   params: Promise<{
@@ -51,27 +49,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
   return (
     <div className="min-h-screen py-20 px-4">
       <div className="max-w-4xl mx-auto">
-        {/* Breadcrumb / Back Button */}
-        <div className="mb-8">
-          <Button variant="ghost" asChild className="mb-4 hover:bg-primary/10">
-            <Link href="/projects" className="flex items-center gap-2">
-              <ArrowLeft className="h-4 w-4" />
-              Back to Projects
-            </Link>
-          </Button>
-          <nav className="text-sm text-muted-foreground">
-            <Link href="/" className="hover:text-primary">
-              Home
-            </Link>
-            <span className="mx-2">/</span>
-            <Link href="/projects" className="hover:text-primary">
-              Projects
-            </Link>
-            <span className="mx-2">/</span>
-            <span className="text-foreground">{project.title}</span>
-          </nav>
-        </div>
-
+        <ProjectBreadcrumb title={project.title} />
         <ProjectDetailClient project={project} />
       </div>
     </div>

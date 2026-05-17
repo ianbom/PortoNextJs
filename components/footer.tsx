@@ -1,8 +1,13 @@
+"use client"
+
 import Link from "next/link"
 import { Github, Linkedin, Instagram, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useLanguage } from "@/lib/i18n"
 
 export default function Footer() {
+  const { t } = useLanguage()
+
   return (
     <footer className="border-t bg-background">
       <div className="container px-4 py-12">
@@ -20,22 +25,22 @@ export default function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h3 className="font-semibold">Quick Links</h3>
+            <h3 className="font-semibold">{t("quickLinks")}</h3>
             <div className="space-y-2">
               <Link href="/" className="block text-muted-foreground hover:text-primary transition-colors">
-                Home
+                {t("navHome")}
               </Link>
               <Link href="/projects" className="block text-muted-foreground hover:text-primary transition-colors">
-                Projects
+                {t("navProjects")}
               </Link>
               <Link href="/contact" className="block text-muted-foreground hover:text-primary transition-colors">
-                Contact
+                {t("navContact")}
               </Link>
             </div>
           </div>
 
           <div className="space-y-4">
-            <h3 className="font-semibold">Contact</h3>
+            <h3 className="font-semibold">{t("navContact")}</h3>
             <div className="space-y-2 text-muted-foreground">
               <p>i.alehansyah@gmail.com</p>
               <p>(+62) 812 339 14116</p>
@@ -44,7 +49,7 @@ export default function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h3 className="font-semibold">Follow Me</h3>
+            <h3 className="font-semibold">{t("followMe")}</h3>
             <div className="flex space-x-2">
               <Button
                 variant="outline"
@@ -91,7 +96,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t mt-8 pt-8 text-center text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Ian Ale Hansyah. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Ian Ale Hansyah. {t("footerRights")}</p>
         </div>
       </div>
     </footer>

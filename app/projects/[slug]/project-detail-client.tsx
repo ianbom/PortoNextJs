@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { motion, AnimatePresence } from "framer-motion"
 import type { Project } from "@/lib/projects"
+import { useLanguage } from "@/lib/i18n"
 
 interface ProjectDetailClientProps {
   project: Project
@@ -38,6 +39,8 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [copiedEmail, setCopiedEmail] = useState(false)
   const [copiedPassword, setCopiedPassword] = useState(false)
+  const { t, projectCopy } = useLanguage()
+  const localizedProject = projectCopy(project.slug)
 
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % project.images.length)
@@ -63,7 +66,9 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
       {/* Project Header */}
       <motion.div variants={fadeInUp} className="text-center space-y-4">
         <h1 className="text-4xl md:text-5xl font-bold">{project.title}</h1>
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">{project.description}</p>
+        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          {localizedProject.description ?? project.description}
+        </p>
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
@@ -74,7 +79,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
           >
             <Link href={project.demoUrl} target="_blank">
               <ExternalLink className="mr-2 h-5 w-5" />
-              Live Demo
+              {t("liveDemo")}
             </Link>
           </Button>
       
@@ -86,7 +91,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
           >
             <Link href={project.githubUrl} target="_blank">
               <Github className="mr-2 h-5 w-5" />
-              View Code
+              {t("viewCode")}
             </Link>
           </Button>
 
@@ -98,7 +103,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
             >
               <Link href={project.videoUrl} target="_blank">
                 <ExternalLink className="mr-2 h-5 w-5" />
-                Preview Video
+                {t("previewVideo")}
               </Link>
             </Button>
           )}
@@ -112,9 +117,9 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
             <CardHeader>
               <CardTitle className="text-2xl flex items-center gap-2">
                 <KeyRound className="h-6 w-6 text-primary" />
-                Demo Account
+                {t("demoAccount")}
               </CardTitle>
-              <CardDescription>Use these credentials to test the application</CardDescription>
+              <CardDescription>{t("demoAccountDesc")}</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
@@ -144,7 +149,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                   <div className="flex items-center gap-3">
                     <KeyRound className="h-5 w-5 text-muted-foreground" />
                     <div>
-                      <p className="text-xs text-muted-foreground mb-1">Password</p>
+                      <p className="text-xs text-muted-foreground mb-1">{t("password")}</p>
                       <p className="font-mono font-medium">{project.demoCredentials.password}</p>
                     </div>
                   </div>
@@ -164,7 +169,9 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
 
                 {project.demoCredentials.note && (
                   <div className="p-3 bg-muted/50 rounded-lg">
-                    <p className="text-sm text-muted-foreground">{project.demoCredentials.note}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {localizedProject.demoNote ?? project.demoCredentials.note}
+                    </p>
                   </div>
                 )}
               </div>
@@ -258,7 +265,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
       <motion.div variants={fadeInUp}>
         <Card>
           <CardHeader>
-            <CardTitle className="text-2xl">Technologies Used</CardTitle>
+            <CardTitle className="text-2xl">{t("technologiesUsed").replace(":", "")}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="flex flex-wrap gap-2">
@@ -280,10 +287,12 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
       <motion.div variants={fadeInUp}>
         <Card>
           <CardHeader>
-            <CardTitle className="text-2xl">About This Project</CardTitle>
+            <CardTitle className="text-2xl">{t("aboutProject")}</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-muted-foreground leading-relaxed text-lg">{project.fullDescription}</p>
+            <p className="text-muted-foreground leading-relaxed text-lg">
+              {localizedProject.fullDescription ?? project.fullDescription}
+            </p>
           </CardContent>
         </Card>
       </motion.div>
@@ -292,8 +301,8 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
       <motion.div variants={fadeInUp}>
         <Card>
           <CardHeader>
-            <CardTitle className="text-2xl">Key Features</CardTitle>
-            <CardDescription>Here are the main features and capabilities of this project</CardDescription>
+            <CardTitle className="text-2xl">{t("keyFeatures")}</CardTitle>
+            <CardDescription>{t("keyFeaturesDesc")}</CardDescription>
           </CardHeader>
           <CardContent>
             <motion.div
@@ -302,7 +311,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
               animate="animate"
               className="grid md:grid-cols-2 gap-4"
             >
-              {project.features.map((feature, index) => (
+              {(localizedProject.features ?? project.features).map((feature, index) => (
                 <motion.div
                   key={index}
                   variants={itemVariants}
@@ -324,8 +333,8 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
       <motion.div variants={fadeInUp}>
         <Card>
           <CardHeader>
-            <CardTitle className="text-2xl">Project Links</CardTitle>
-            <CardDescription>Explore the project further with these links</CardDescription>
+            <CardTitle className="text-2xl">{t("projectLinks")}</CardTitle>
+            <CardDescription>{t("projectLinksDesc")}</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -336,7 +345,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
               >
                 <Link href={project.demoUrl} target="_blank">
                   <ExternalLink className="mr-2 h-5 w-5" />
-                  Live Demo
+                  {t("liveDemo")}
                 </Link>
               </Button>
               <Button
@@ -347,7 +356,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
               >
                 <Link href={project.githubUrl} target="_blank">
                   <Github className="mr-2 h-5 w-5" />
-                  Source Code
+                  {t("sourceCode")}
                 </Link>
               </Button>
 
@@ -359,7 +368,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                 >
                   <Link href={project.videoUrl} target="_blank">
                     <ExternalLink className="mr-2 h-5 w-5" />
-                    Preview Video
+                    {t("previewVideo")}
                   </Link>
                 </Button>
               )}
@@ -371,7 +380,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
       {/* Back to Projects */}
       <motion.div variants={fadeInUp} className="text-center pt-8">
         <Button variant="outline" size="lg" asChild>
-          <Link href="/projects">View All Projects</Link>
+          <Link href="/projects">{t("viewAllProjects")}</Link>
         </Button>
       </motion.div>
     </motion.div>

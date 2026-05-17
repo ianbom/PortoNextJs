@@ -8,6 +8,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { getAllProjects, getFeaturedProjects } from "@/lib/projects"
+import { useLanguage } from "@/lib/i18n"
 
 const allProjects = getAllProjects()
 const featuredProjects = getFeaturedProjects()
@@ -35,6 +36,8 @@ const itemVariants = {
 }
 
 export default function ProjectsPage() {
+  const { t, projectCopy } = useLanguage()
+
   return (
     <div className="min-h-screen py-20 px-4">
       <div className="max-w-7xl mx-auto">
@@ -44,16 +47,15 @@ export default function ProjectsPage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">My Projects</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">{t("projectsTitle")}</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Here are some of the projects I've worked on. Each one represents a learning journey and showcases different
-            aspects of my development skills.
+            {t("projectsIntro")}
           </p>
         </motion.div>
 
         {/* Featured Projects */}
        <motion.section initial="hidden" animate="visible" variants={containerVariants} className="mb-16">
-          <h2 className="text-2xl font-bold mb-8">Featured Projects</h2>
+          <h2 className="text-2xl font-bold mb-8">{t("featuredProjects")}</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {featuredProjects.map((project) => (
               <motion.div key={project.slug} variants={itemVariants}>
@@ -69,12 +71,14 @@ export default function ProjectsPage() {
                         className="absolute inset-0 w-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                       <div className="absolute top-4 right-4">
-                        <Badge className="bg-brand-gradient text-black border-0 shadow-lg">Featured</Badge>
+                        <Badge className="bg-brand-gradient text-black border-0 shadow-lg">{t("featured")}</Badge>
                       </div>
                     </div>
                     <CardHeader>
                       <CardTitle className="text-xl">{project.title}</CardTitle>
-                      <CardDescription className="text-base">{project.description}</CardDescription>
+                      <CardDescription className="text-base">
+                        {projectCopy(project.slug).description ?? project.description}
+                      </CardDescription>
                     </CardHeader>
                     <CardContent>
                       <div className="flex flex-wrap gap-2">
@@ -94,7 +98,7 @@ export default function ProjectsPage() {
 
         {/* Other Projects */}
         <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={containerVariants}>
-          <h2 className="text-2xl font-bold mb-8">Other Projects</h2>
+          <h2 className="text-2xl font-bold mb-8">{t("otherProjects")}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {otherProjects.map((project) => (
               <motion.div key={project.slug} variants={itemVariants}>
@@ -112,7 +116,9 @@ export default function ProjectsPage() {
                     </div>
                     <CardHeader className="pb-3">
                       <CardTitle className="text-lg">{project.title}</CardTitle>
-                      <CardDescription className="text-sm">{project.description}</CardDescription>
+                      <CardDescription className="text-sm">
+                        {projectCopy(project.slug).description ?? project.description}
+                      </CardDescription>
                     </CardHeader>
                     <CardContent className="pb-3">
                       <div className="flex flex-wrap gap-1">
