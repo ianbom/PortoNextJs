@@ -450,6 +450,46 @@ const projectText: Record<string, Partial<Record<Language, { description?: strin
       ],
     },
   },
+  shayda: {
+    id: {
+      description:
+        "Website e-commerce fashion muslimah premium dengan katalog produk, checkout, pembayaran online, pengiriman, dan dashboard admin.",
+      fullDescription:
+        "Shayda adalah platform e-commerce untuk produk fashion muslimah yang dirancang dengan tampilan premium, elegan, dan mudah digunakan. Website ini mendukung alur belanja lengkap mulai dari melihat katalog produk, memilih varian, memasukkan produk ke keranjang, checkout, pembayaran online, hingga pengiriman barang. Sistem juga dilengkapi dashboard admin untuk mengelola produk, kategori, stok, pesanan, pembayaran, pengiriman, customer, dan notifikasi secara terpusat.",
+      features: [
+        "Katalog produk fashion muslimah untuk gamis, dress, tunik, blouse, outer, rok, celana, hijab, mukena, inner, one set, dan aksesoris",
+        "Detail produk lengkap dengan foto, deskripsi, harga, stok, varian, berat, dan informasi dimensi",
+        "Keranjang belanja dan wishlist untuk menyimpan produk favorit sebelum checkout",
+        "Alur checkout dengan manajemen alamat, ringkasan pesanan, ongkos kirim, dan total pembayaran",
+        "Integrasi payment gateway Midtrans untuk pembayaran online digital",
+        "Integrasi pengiriman Biteship untuk pemilihan kurir, perhitungan ongkir, dan dukungan pengiriman",
+        "Manajemen pesanan customer dengan riwayat pesanan, status pembayaran, status pengiriman, dan tracking",
+        "Dashboard admin untuk mengelola produk, kategori, stok, pesanan, pembayaran, pengiriman, customer, dan data operasional",
+        "Sistem notifikasi untuk update pesanan, pembayaran, pengiriman, dan aktivitas penting lainnya",
+        "Autentikasi customer dengan login, register, dan dukungan Google Auth",
+      ],
+    },
+  },
+  anemi: {
+    id: {
+      description:
+        "Website e-commerce fashion dengan fokus pada tampilan koleksi, eksplorasi produk, dan pengalaman browsing yang sederhana.",
+      fullDescription:
+        "Anemi adalah website e-commerce fashion yang dibangun dari fondasi commerce serupa dengan Shayda, tetapi memiliki penekanan yang lebih kuat pada presentasi storefront, eksplorasi koleksi, dan showcase produk. Website ini membantu customer melihat koleksi terbaru, produk favorit, detail produk, dan menjalani alur belanja yang jelas. Strukturnya mendukung pengelolaan katalog, detail produk, transaksi online, workflow pengiriman, serta administrasi terpusat untuk operasional toko.",
+      features: [
+        "Storefront berbasis koleksi untuk menampilkan produk terbaru, most-loved, dan produk fashion pilihan",
+        "Halaman daftar produk untuk browsing koleksi dan membandingkan produk yang tersedia",
+        "Halaman detail produk dengan foto, deskripsi, harga, stok, varian, dan spesifikasi produk",
+        "Dukungan alur belanja dari eksplorasi produk ke cart, checkout, pembayaran, dan pengiriman",
+        "Alur pembayaran online untuk pemrosesan transaksi digital",
+        "Dukungan workflow pengiriman untuk pilihan delivery dan pengiriman pesanan",
+        "Manajemen pesanan customer untuk melihat status pesanan, pembayaran, dan pengiriman",
+        "Manajemen admin untuk produk, stok, kategori, pesanan, customer, pembayaran, dan pengiriman",
+        "Section storefront untuk promosi new collection dan most-loved product",
+        "Alur akun customer untuk akses belanja terautentikasi",
+      ],
+    },
+  },
 }
 
 type LanguageContextValue = {

@@ -409,6 +409,52 @@ export const projects: Project[] = [
     featured: false,
     thumbnail: "/PersonaQ/Dashboard.png"
   },
+    {
+    slug: "anemi",
+    title: "Anemi",
+    description: "A curated fashion e-commerce storefront focused on collection discovery, product storytelling, and streamlined product browsing.",
+    fullDescription:
+      "Anemi is a fashion e-commerce website built from the same commerce foundation as Shayda, but positioned with a stronger focus on storefront presentation, collection discovery, and product showcase. The website helps customers explore featured collections, view detailed product information, and move through a clear shopping journey. Its structure supports product catalog management, product details, online transactions, shipping workflows, and centralized administration for store operations.",
+    features: [
+      "Collection-focused storefront for highlighting new arrivals, most-loved items, and curated fashion products",
+      "Product listing pages designed for browsing collections and comparing available products",
+      "Product detail pages with photos, descriptions, prices, stock, variants, and product specifications",
+      "Shopping journey support from product discovery to cart, checkout, payment, and delivery",
+      "Online payment flow designed for digital transaction processing",
+      "Shipping workflow support for calculating delivery options and handling order shipment",
+      "Customer order management for monitoring order, payment, and delivery status",
+      "Admin-side product, stock, category, order, customer, payment, and shipping management",
+      "Storefront sections for new collection and most-loved product promotion",
+      "Customer account flow for authenticated shopping access"
+    ],
+    technologies: ["Laravel", "PHP", "MySQL", "Payment Gateway", "Shipping Integration", "Tailwind CSS", "Typescript", "React"],
+    images: [
+      {
+        url: "/anemi/new-collection.png",
+        alt: "Anemi New Collection",
+        caption: "New collection storefront section for presenting highlighted fashion products.",
+      },
+      {
+        url: "/anemi/most-loved.png",
+        alt: "Anemi Most Loved Products",
+        caption: "Most-loved product section for showcasing popular fashion items.",
+      },
+      {
+        url: "/anemi/list-prod.png",
+        alt: "Anemi Product List",
+        caption: "Product list page for browsing available catalog items.",
+      },
+      {
+        url: "/anemi/detail-prod.png",
+        alt: "Anemi Product Detail",
+        caption: "Product detail page for viewing product images, information, price, and variants.",
+      },
+    ],
+    githubUrl: "https://github.com",
+    demoUrl: "https://anemi.webcareproject.my.id/",
+    featured: false,
+    thumbnail: "/anemi/new-collection.png"
+  },
   {
     slug: "lms-impact-academy",
     title: "LMS Impact Academy",
@@ -808,6 +854,53 @@ export const projects: Project[] = [
     featured: true,
     thumbnail: "/syntra-ai/chatbot.png"
   },
+  {
+    slug: "shayda",
+    title: "Shayda",
+    description: "A premium Muslimah fashion e-commerce website with catalog browsing, checkout, online payment, shipping, and admin management.",
+    fullDescription:
+      "Shayda is an e-commerce platform for Muslimah fashion products, designed with a premium, elegant, and easy-to-use shopping experience. The website supports the full online shopping flow from product discovery, variant selection, cart, checkout, online payment, and shipping. It also includes an admin dashboard for managing products, categories, stock, orders, payments, shipping, customers, and notifications in one centralized system.",
+    features: [
+      "Muslimah fashion product catalog for gamis, dress, tunic, blouse, outer, skirt, pants, hijab, mukena, inner, one set, and accessories",
+      "Complete product detail pages with photos, descriptions, prices, stock, variants, weight, and dimension information",
+      "Shopping cart and wishlist for saving favorite products before checkout",
+      "Checkout flow with shipping address management, order summary, shipping cost, and payment total",
+      "Midtrans payment gateway integration for digital online payments",
+      "Biteship shipping integration for courier selection, shipping cost calculation, and delivery support",
+      "Customer order management with order history, payment status, shipping status, and tracking information",
+      "Admin dashboard for managing products, categories, stock, orders, payments, shipping, customers, and operational data",
+      "Notification system for order, payment, shipping, and other important activity updates",
+      "Customer authentication with login, register, and Google Auth support"
+    ],
+    technologies: ["Laravel", "PHP", "MySQL", "Midtrans", "Biteship", "Google Auth", "Tailwind CSS", "JavaScript"],
+    images: [
+      {
+        url: "/shayda/list-product.png",
+        alt: "Shayda Product Catalog",
+        caption: "Product catalog page for browsing Muslimah fashion collections with a premium shopping layout.",
+      },
+      {
+        url: "/shayda/detail-prod.png",
+        alt: "Shayda Product Detail",
+        caption: "Detailed product page with images, pricing, stock, variants, and product information.",
+      },
+      {
+        url: "/shayda/my-cart.png",
+        alt: "Shayda Shopping Cart",
+        caption: "Shopping cart page for reviewing selected products before checkout.",
+      },
+      {
+        url: "/shayda/checkout.png",
+        alt: "Shayda Checkout",
+        caption: "Checkout flow with address selection, shipping cost, order summary, and payment preparation.",
+      },
+    ],
+    githubUrl: "https://github.com",
+    demoUrl: "https://shayda.webcareproject.my.id/",
+    featured: true,
+    thumbnail: "/shayda/list-product.png"
+  },
+
 
 ]
 
