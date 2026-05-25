@@ -211,6 +211,54 @@ const certificates = [
     logo: "/placeholder.svg?height=60&width=60",
   },
   {
+    title: "Basic Artificial Intelligence",
+    issuer: "Dicoding Indonesia",
+    date: "May 2026",
+    credentialId: "-",
+    description:
+      "Dicoding certificate for completing a basic Artificial Intelligence learning program, covering AI concepts, common use cases, responsible AI awareness, and how AI can support software development and digital products.",
+    descriptionId:
+      "Sertifikat Dicoding untuk penyelesaian program pembelajaran dasar Artificial Intelligence, mencakup konsep AI, contoh penerapan umum, pemahaman AI yang bertanggung jawab, serta cara AI mendukung pengembangan software dan produk digital.",
+    verificationUrl: "/sertif/sertif%20Dasar%20AI%20Dicoding.pdf",
+    logo: "/placeholder.svg?height=60&width=60",
+  },
+  {
+    title: "Machine Learning",
+    issuer: "Dicoding Indonesia",
+    date: "May 2026",
+    credentialId: "-",
+    description:
+      "Dicoding certificate for completing Machine Learning learning material, focused on fundamental ML workflow, data preparation, model training, evaluation, and applying machine learning concepts to solve practical problems.",
+    descriptionId:
+      "Sertifikat Dicoding untuk penyelesaian materi Machine Learning, berfokus pada alur kerja dasar ML, persiapan data, pelatihan model, evaluasi, serta penerapan konsep machine learning untuk menyelesaikan masalah praktis.",
+    verificationUrl: "/sertif/sertif%20dicoding%20machine%20learning.pdf",
+    logo: "/placeholder.svg?height=60&width=60",
+  },
+  {
+    title: "Prompt Engineering",
+    issuer: "Dicoding Indonesia",
+    date: "May 2026",
+    credentialId: "-",
+    description:
+      "Dicoding certificate for completing Prompt Engineering learning material, covering prompt structure, context design, instruction clarity, iterative refinement, and effective use of generative AI tools for development workflows.",
+    descriptionId:
+      "Sertifikat Dicoding untuk penyelesaian materi Prompt Engineering, mencakup struktur prompt, perancangan konteks, kejelasan instruksi, perbaikan iteratif, serta penggunaan efektif tools generative AI dalam alur kerja pengembangan.",
+    verificationUrl: "/sertif/sertif%20dicoding%20prompt%20engineer.pdf",
+    logo: "/placeholder.svg?height=60&width=60",
+  },
+  {
+    title: "Python Programming",
+    issuer: "Dicoding Indonesia",
+    date: "May 2026",
+    credentialId: "-",
+    description:
+      "Dicoding certificate for completing backend development with Python learning material, covering server-side programming fundamentals, backend logic, data handling, API-oriented workflows, and Python practices for building application services.",
+    descriptionId:
+      "Sertifikat Dicoding untuk penyelesaian materi pengembangan backend dengan Python, mencakup dasar pemrograman server-side, logika backend, pengelolaan data, alur kerja berbasis API, serta praktik Python untuk membangun layanan aplikasi.",
+    verificationUrl: "/sertif/sertif%20dicoding%20python.pdf",
+    logo: "/placeholder.svg?height=60&width=60",
+  },
+  {
     title: "Introduction to Generative AI - Art of the Possible",
     issuer: "AWS Training & Certification",
     date: "April 2026",
