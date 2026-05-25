@@ -1,9 +1,7 @@
 "use client"
 
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Github, ExternalLink } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
@@ -36,7 +34,7 @@ const itemVariants = {
 }
 
 export default function ProjectsPage() {
-  const { t, projectCopy } = useLanguage()
+  const { language, t } = useLanguage()
 
   return (
     <div className="min-h-screen py-20 px-4">
@@ -57,7 +55,11 @@ export default function ProjectsPage() {
        <motion.section initial="hidden" animate="visible" variants={containerVariants} className="mb-16">
           <h2 className="text-2xl font-bold mb-8">{t("featuredProjects")}</h2>
           <div className="grid md:grid-cols-2 gap-8">
-            {featuredProjects.map((project) => (
+            {featuredProjects.map((project) => {
+              const projectTitle = language === "id" ? project.titleId ?? project.title : project.title
+              const projectDescription = language === "id" ? project.descriptionId ?? project.description : project.description
+
+              return (
               <motion.div key={project.slug} variants={itemVariants}>
                 <Link href={`/projects/${project.slug}`}>
                   <Card className="h-full hover:shadow-2xl transition-all duration-500 group hover:scale-[1.02] border-2 hover:border-primary/30 overflow-hidden">
@@ -65,7 +67,7 @@ export default function ProjectsPage() {
                     <div className="relative overflow-hidden pt-[56.25%] rounded-t-lg"> {/* 16:9 ratio (9 / 16 = 0.5625) */}
                       <Image
                         src={project.thumbnail || "/placeholder.svg"}
-                        alt={project.title}
+                        alt={projectTitle}
                         width={400}
                         height={200}
                         className="absolute inset-0 w-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -75,9 +77,9 @@ export default function ProjectsPage() {
                       </div>
                     </div>
                     <CardHeader>
-                      <CardTitle className="text-xl">{project.title}</CardTitle>
+                      <CardTitle className="text-xl">{projectTitle}</CardTitle>
                       <CardDescription className="text-base">
-                        {projectCopy(project.slug).description ?? project.description}
+                        {projectDescription}
                       </CardDescription>
                     </CardHeader>
                     <CardContent>
@@ -92,7 +94,8 @@ export default function ProjectsPage() {
                   </Card>
                 </Link>
               </motion.div>
-            ))}
+              )
+            })}
           </div>
         </motion.section>
 
@@ -100,7 +103,11 @@ export default function ProjectsPage() {
         <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={containerVariants}>
           <h2 className="text-2xl font-bold mb-8">{t("otherProjects")}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {otherProjects.map((project) => (
+            {otherProjects.map((project) => {
+              const projectTitle = language === "id" ? project.titleId ?? project.title : project.title
+              const projectDescription = language === "id" ? project.descriptionId ?? project.description : project.description
+
+              return (
               <motion.div key={project.slug} variants={itemVariants}>
                 <Link href={`/projects/${project.slug}`}>
                   <Card className="h-full hover:shadow-lg transition-all duration-300 group">
@@ -108,16 +115,16 @@ export default function ProjectsPage() {
                     <div className="relative overflow-hidden rounded-t-lg pt-[56.25%]">
                       <Image
                         src={project.thumbnail}
-                        alt={project.title}
+                        alt={projectTitle}
                         width={400}
                         height={225} // Sesuaikan tinggi jika perlu, atau hapus jika ingin dikontrol penuh oleh CSS
                         className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
                     <CardHeader className="pb-3">
-                      <CardTitle className="text-lg">{project.title}</CardTitle>
+                      <CardTitle className="text-lg">{projectTitle}</CardTitle>
                       <CardDescription className="text-sm">
-                        {projectCopy(project.slug).description ?? project.description}
+                        {projectDescription}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="pb-3">
@@ -132,7 +139,8 @@ export default function ProjectsPage() {
                   </Card>
                 </Link>
               </motion.div>
-            ))}
+              )
+            })}
           </div>
         </motion.section>
       </div>

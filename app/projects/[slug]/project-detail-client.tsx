@@ -9,7 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { motion, AnimatePresence } from "framer-motion"
-import type { Project } from "@/lib/projects"
+import type { Project, ProjectSection } from "@/lib/projects"
 import { useLanguage } from "@/lib/i18n"
 
 interface ProjectDetailClientProps {
@@ -39,8 +39,35 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [copiedEmail, setCopiedEmail] = useState(false)
   const [copiedPassword, setCopiedPassword] = useState(false)
-  const { t, projectCopy } = useLanguage()
-  const localizedProject = projectCopy(project.slug)
+  const { language, t } = useLanguage()
+  const projectTitle = language === "id" ? project.titleId ?? project.title : project.title
+  const projectDescription = language === "id" ? project.descriptionId ?? project.description : project.description
+  const projectFullDescription =
+    language === "id" ? project.fullDescriptionId ?? project.fullDescription : project.fullDescription
+  const projectFeatures = language === "id" ? project.featuresId ?? project.features : project.features
+  const demoNote =
+    language === "id" ? project.demoCredentials?.noteId ?? project.demoCredentials?.note : project.demoCredentials?.note
+  const additionalSections = project.additionalSections
+  const hasAdditionalSections = Boolean(
+    additionalSections?.problem ||
+      additionalSections?.goals ||
+      additionalSections?.impact ||
+      additionalSections?.roleFeatures ||
+      additionalSections?.technologyStack ||
+      additionalSections?.systemArchitecture ||
+      additionalSections?.structureAndEntities ||
+      additionalSections?.repositoryAuthAndApi ||
+      additionalSections?.patientAdminAutomationFeatures ||
+      additionalSections?.repositorySchemaAuthAndApi ||
+      additionalSections?.roleAndSystemFeatures ||
+      additionalSections?.userAdminAndSystemFeatures ||
+      additionalSections?.repositoryAndAuth ||
+      additionalSections?.userAdminAndRagFeatures ||
+      additionalSections?.repositorySchemaAuthAndIntegrations ||
+      additionalSections?.customerAndAdminFeatures ||
+      additionalSections?.repositoryStructureAndEntities ||
+      additionalSections?.authenticationPaymentsShippingAndNotes,
+  )
 
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % project.images.length)
@@ -61,13 +88,49 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
     }
   }
 
+  const renderProjectSection = (sectionKey: string, section?: ProjectSection) => {
+    if (!section) return null
+
+    const sectionTitle = language === "id" ? section.titleId ?? section.title : section.title
+    const sectionDescription = language === "id" ? section.descriptionId ?? section.description : section.description
+    const sectionItems = language === "id" ? section.itemsId ?? section.items : section.items
+
+    return (
+      <motion.div key={sectionKey} variants={fadeInUp}>
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-2xl">{sectionTitle}</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            {sectionDescription && (
+              <p className="text-muted-foreground leading-relaxed">{sectionDescription}</p>
+            )}
+            {sectionItems && sectionItems.length > 0 && (
+              <div className="grid md:grid-cols-2 gap-3">
+                {sectionItems.map((item, index) => (
+                  <div
+                    key={`${sectionKey}-${index}`}
+                    className="flex items-start gap-3 rounded-lg border bg-background p-3"
+                  >
+                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm text-muted-foreground leading-relaxed">{item}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </CardContent>
+        </Card>
+      </motion.div>
+    )
+  }
+
   return (
     <motion.div initial="initial" animate="animate" variants={staggerContainer} className="space-y-8">
       {/* Project Header */}
       <motion.div variants={fadeInUp} className="text-center space-y-4">
-        <h1 className="text-4xl md:text-5xl font-bold">{project.title}</h1>
+        <h1 className="text-4xl md:text-5xl font-bold">{projectTitle}</h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          {localizedProject.description ?? project.description}
+          {projectDescription}
         </p>
 
         {/* Action Buttons */}
@@ -167,10 +230,10 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                   </Button>
                 </div>
 
-                {project.demoCredentials.note && (
+                {demoNote && (
                   <div className="p-3 bg-muted/50 rounded-lg">
                     <p className="text-sm text-muted-foreground">
-                      {localizedProject.demoNote ?? project.demoCredentials.note}
+                      {demoNote}
                     </p>
                   </div>
                 )}
@@ -291,7 +354,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
           </CardHeader>
           <CardContent>
             <p className="text-muted-foreground leading-relaxed text-lg">
-              {localizedProject.fullDescription ?? project.fullDescription}
+              {projectFullDescription}
             </p>
           </CardContent>
         </Card>
@@ -311,7 +374,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
               animate="animate"
               className="grid md:grid-cols-2 gap-4"
             >
-              {(localizedProject.features ?? project.features).map((feature, index) => (
+              {projectFeatures.map((feature, index) => (
                 <motion.div
                   key={index}
                   variants={itemVariants}
@@ -326,6 +389,53 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
           </CardContent>
         </Card>
       </motion.div>
+
+      {/* Additional Project Details */}
+      {hasAdditionalSections && (
+        <div className="space-y-6">
+          <motion.div variants={fadeInUp} className="text-center space-y-2">
+            <h2 className="text-3xl font-bold">{t("projectDetails")}</h2>
+            <p className="text-muted-foreground">{t("projectDetailsDesc")}</p>
+          </motion.div>
+
+          {renderProjectSection("problem", project.additionalSections?.problem)}
+          {renderProjectSection("goals", project.additionalSections?.goals)}
+          {renderProjectSection("impact", project.additionalSections?.impact)}
+          {renderProjectSection("roleFeatures", project.additionalSections?.roleFeatures)}
+          {renderProjectSection("technologyStack", project.additionalSections?.technologyStack)}
+          {renderProjectSection("systemArchitecture", project.additionalSections?.systemArchitecture)}
+          {renderProjectSection("structureAndEntities", project.additionalSections?.structureAndEntities)}
+          {renderProjectSection("repositoryAuthAndApi", project.additionalSections?.repositoryAuthAndApi)}
+          {renderProjectSection(
+            "patientAdminAutomationFeatures",
+            project.additionalSections?.patientAdminAutomationFeatures,
+          )}
+          {renderProjectSection(
+            "repositorySchemaAuthAndApi",
+            project.additionalSections?.repositorySchemaAuthAndApi,
+          )}
+          {renderProjectSection("roleAndSystemFeatures", project.additionalSections?.roleAndSystemFeatures)}
+          {renderProjectSection(
+            "userAdminAndSystemFeatures",
+            project.additionalSections?.userAdminAndSystemFeatures,
+          )}
+          {renderProjectSection("repositoryAndAuth", project.additionalSections?.repositoryAndAuth)}
+          {renderProjectSection("userAdminAndRagFeatures", project.additionalSections?.userAdminAndRagFeatures)}
+          {/* {renderProjectSection(
+            "repositorySchemaAuthAndIntegrations",
+            project.additionalSections?.repositorySchemaAuthAndIntegrations,
+          )} */}
+          {renderProjectSection("customerAndAdminFeatures", project.additionalSections?.customerAndAdminFeatures)}
+          {renderProjectSection(
+            "repositoryStructureAndEntities",
+            project.additionalSections?.repositoryStructureAndEntities,
+          )}
+          {renderProjectSection(
+            "authenticationPaymentsShippingAndNotes",
+            project.additionalSections?.authenticationPaymentsShippingAndNotes,
+          )}
+        </div>
+      )}
 
       <Separator className="my-8" />
 
