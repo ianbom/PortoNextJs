@@ -63,7 +63,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: "sobat-bumi",
-    title: "Aduan Emisi / Sobat Bumi",
+    title: " Sobat Bumi",
     demoCredentials: {
       email: "ianbom@gmail.com",
       password: "ianbom123",
@@ -71,7 +71,7 @@ export const projects: Project[] = [
       noteId: "Ini adalah akun demo untuk role citizen.",
     },
     description: "A collaborative platform for reporting and taking real action on environmental issues in Indonesia.",
-    fullDescription: "Aduan Emisi / Sobat Bumi is a Laravel, Inertia, and React web application for environmental/emission reporting, education, community missions, donations, quizzes, leaderboards, and rewards. It is used by citizens, communities, and admins to manage reports, participation, content, and point-based activities.",
+    fullDescription: " Sobat Bumi is a Laravel, Inertia, and React web application for environmental/emission reporting, education, community missions, donations, quizzes, leaderboards, and rewards. It is used by citizens, communities, and admins to manage reports, participation, content, and point-based activities.",
     features: [
       "Citizen, community, and admin role flows",
       "Environmental report creation with media, comments, volunteer registration, and map views",
@@ -236,7 +236,7 @@ export const projects: Project[] = [
     demoUrl: "https://sobatbumi.iandev.my.id/login",
     featured: true,
     thumbnail: "/sobatbumi/FireShot Capture 166 - SobatBumi - [sobatbumi.ianianale.shop].png",
-    titleId: "Aduan Emisi / Sobat Bumi",
+    titleId: "Sobat Bumi",
     descriptionId: "Platform kolaboratif untuk melaporkan dan melakukan aksi nyata terhadap isu lingkungan di Indonesia.",
     fullDescriptionId: "SobatBumi menghubungkan warga, komunitas, dan relawan untuk melaporkan, memverifikasi, dan menindaklanjuti isu lingkungan seperti sampah dan polusi. Platform ini menyediakan sistem pelaporan, proses verifikasi, misi aksi lingkungan, dan dashboard admin untuk monitoring serta statistik.",
     featuresId: [
@@ -254,7 +254,7 @@ export const projects: Project[] = [
   },
   {
     slug: "simkes",
-    title: "Simkesia / SIMKES",
+    title: "Simkesia",
     demoCredentials: {
       email: "warga1@gmail.com",
       password: "password",
@@ -262,7 +262,7 @@ export const projects: Project[] = [
       noteId: "Ini adalah akun demo untuk role patient.",
     },
     description: "A health information system for maternal and child care, consultations, facility schedules, and stunting data.",
-    fullDescription: "Simkesia / SIMKES is a Laravel, Inertia, and React health information system for patients, health workers, facility admins, and superadmins. It manages family data, children, pregnancies, checkups, online consultations, facilities, schedules, and stunting data.",
+    fullDescription: "Simkesia is a Laravel, Inertia, and React health information system for patients, health workers, facility admins, and superadmins. It manages family data, children, pregnancies, checkups, online consultations, facilities, schedules, and stunting data.",
     features: [
       "Patient modules for family, child, pregnancy, medical history, charts, guides, consultations, facilities, chatbot, and medicine bank",
       "Health worker modules for ANC/pregnancy checkups, child checkups, history, schedules, and online consultations",
@@ -417,7 +417,7 @@ export const projects: Project[] = [
     demoUrl: "https://simkesia.iandev.my.id/",
     featured: true,
     thumbnail: "/simkesia/home por.png",
-    titleId: "Simkesia / SIMKES",
+    titleId: "Simkesia",
     descriptionId: "Sistem informasi kesehatan untuk layanan ibu dan anak, manajemen fasilitas, dan pencatatan klinis.",
     fullDescriptionId: "SIMKESIA adalah sistem informasi kesehatan berbasis web untuk mengelola kesehatan ibu dan anak, fasilitas, staf, konsultasi online, dan rekam pasien.",
     featuresId: [
@@ -786,9 +786,9 @@ export const projects: Project[] = [
   },
   {
     slug: "dental-clinic",
-    title: "Cantika Dental Care / DentalClinic",
+    title: "DentalClinic",
     description: "A web-based dental clinic booking system with doctor schedules, WhatsApp notifications, check-in, payments, and admin statistics.",
-    fullDescription: "Cantika Dental Care / DentalClinic helps patients browse services, choose doctors, check available schedules, and create dental appointment bookings online. Clinic staff and admins manage bookings, patients, doctors, practice schedules, payments, check-ins, cancellations, reschedules, WhatsApp notifications, and operational statistics.",
+    fullDescription: "DentalClinic helps patients browse services, choose doctors, check available schedules, and create dental appointment bookings online. Clinic staff and admins manage bookings, patients, doctors, practice schedules, payments, check-ins, cancellations, reschedules, WhatsApp notifications, and operational statistics.",
     features: [
       "Public pages for home, about, services, doctor list, doctor detail, booking flow, booking success, and booking lookup",
       "Patient booking with doctor/service/date/time selection, NIK check, WhatsApp verification, check-in, and cancellation",
@@ -953,7 +953,7 @@ export const projects: Project[] = [
     demoUrl: "https://klinik-gigi.iandev.my.id",
     featured: false,
     thumbnail: "/DentalClinic/Home.png",
-    titleId: "Cantika Dental Care / DentalClinic",
+    titleId: "DentalClinic",
     descriptionId: "Sistem manajemen klinik gigi dengan booking janji, manajemen pasien, dan dashboard admin.",
     fullDescriptionId: "DentalClinic adalah sistem manajemen klinik berbasis web untuk merapikan operasional praktik gigi, mulai dari booking, check-in pasien, katalog layanan, hingga dashboard admin.",
     featuresId: [
